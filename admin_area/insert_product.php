@@ -8,10 +8,12 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="./Styles/styles.css">
-    
+
     <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
     <script>
-        tinymce.init({selector: 'textarea'});
+        tinymce.init({
+            selector: 'textarea'
+        });
     </script>
 </head>
 
@@ -29,7 +31,7 @@
 
             <tr>
                 <td align="right"><b>Product Title:</b></td>
-                <td><input type="text" name="food_title" size="40" required/></td>
+                <td><input type="text" name="food_title" size="40" required /></td>
             </tr>
 
             <tr>
@@ -78,12 +80,12 @@
 
             <tr>
                 <td align="right"><b>Image:</b></td>
-                <td><input type="file" name="food_image" required/></td>
+                <td><input type="file" name="food_image" required /></td>
             </tr>
 
             <tr>
                 <td align="right"><b>Price:</b></td>
-                <td><input type="text" name="food_price" required/></td>
+                <td><input type="text" name="food_price" required /></td>
             </tr>
 
             <tr>
@@ -93,7 +95,7 @@
 
             <tr>
                 <td align="right"><b>Product Keywords:</b></td>
-                <td><input type="text" name="product_keywords" size="50" required/></td>
+                <td><input type="text" name="product_keywords" size="50" required /></td>
             </tr>
 
             <tr align="center">
@@ -111,34 +113,32 @@
 </html>
 <?php
 
-    // Getting the Text Data from Fields
-    if(isset($_POST['insert_post'])) {
-        $food_title = $_POST['food_title'];
-        $food_cat = $_POST['food_categories'];
-        $food_brands = $_POST['food_brands'];
-        $food_price = $_POST['food_price'];
-        $food_desc = $_POST['food_desc'];
-        $product_keywords = $_POST['product_keywords'];
-        
-        //Getting the Image from the Field
-        $food_image = $_FILES['food_image']['name'];
-        $food_image_tmp = $_FILES['food_image']['tmp_name'];
+// Getting the Text Data from Fields
+if (isset($_POST['insert_post'])) {
+    $food_title = $_POST['food_title'];
+    $food_cat = $_POST['food_categories'];
+    $food_brands = $_POST['food_brands'];
+    $food_price = $_POST['food_price'];
+    $food_desc = $_POST['food_desc'];
+    $product_keywords = $_POST['product_keywords'];
 
-        move_uploaded_file($food_image_tmp, '/product_images/$food_image');
+    //Getting the Image from the Field
+    $food_image = $_FILES['food_image']['name'];
+    $food_image_tmp = $_FILES['food_image']['tmp_name'];
+    $upload = 'product images/' . $food_image;
+    
+    move_uploaded_file($food_image_tmp, $upload);
 
-        $insert_food = "INSERT INTO food (food_title, food_categories, food_brands, food_price, food_desc, food_image, product_keywords) 
+    $insert_food = "INSERT INTO food (food_title, food_categories, food_brands, food_price, food_desc, food_image, product_keywords) 
                          values ('$food_title', '$food_cat', '$food_brands', '$food_price', '$food_desc', '$food_image', '$product_keywords
                          ')";
 
-        $insert_pro = mysqli_query($mysqli, $insert_food);
-            if ($insert_pro ) {
-                echo "<script>alert('Food Has Been Inserted!')</script>";
-                echo "<script>window.open('insert_food.php','_self')</script>";
-
-            }
-
-    } else {
-
+    $insert_pro = mysqli_query($mysqli, $insert_food);
+    if ($insert_pro) {
+        echo "<script>alert('Food Has Been Inserted!')</script>";
+        echo "<script>window.open('insert_food.php','_self')</script>";
     }
+} else {
+}
 
 ?>
