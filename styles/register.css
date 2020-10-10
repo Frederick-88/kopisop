@@ -1,0 +1,37 @@
+@import 'fonts/gotham.css';
+
+* {
+    font-family: 'GothamPro';
+}
+
+.leftside,
+.rightside {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+
+    .leftside,
+    .rightside {
+        height: 100vh;
+    }
+}
+
+.leftside,
+.btn-custom {
+    background: #ca1414;
+    color: #ffffff;
+}
+
+.rightside h1 {
+    background: #ffffff;
+    color: #ca1414;
+    font-weight: 600;
+}
+
+.input-icon {
+    width: 25px;
+    height: 25px;
+}
