@@ -25,7 +25,7 @@
                                         <img class="input-icon" src="./assets/images/icons/email.png" alt="email">
                                     </span>
                                 </div>
-                                <input type="email" class="form-control " id="emailInput" placeholder="Enter your email">
+                                <input type="email" name="email" class="form-control " id="emailInput" placeholder="Enter your email" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -36,10 +36,10 @@
                                         <img class="input-icon" src="./assets/images/icons/lock.png" alt="password">
                                     </span>
                                 </div>
-                                <input type="password" class="form-control " id="passwordInput" placeholder="Enter your password">
+                                <input type="password" name="password" class="form-control " id="passwordInput" placeholder="Enter your password" required>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-block btn-custom">Login</button>
+                        <button type="submit" name="login_user" class="btn btn-block btn-custom">Login</button>
                     </form>
                     <br>
                     <p>Doesn't have account yet? <a href="register.php">Create one.</a></p>

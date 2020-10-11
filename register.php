@@ -20,7 +20,7 @@
         <div class="col-md-7 no-gutters">
             <div class="rightside d-flex justify-content-center align-items-center">
                 <div class="card border-0" style="width: 25rem;">
-                    <form>
+                    <form action="./model/registration.php" method="POST">
                         <h1>Create Account</h1>
                         <div class="form-group">
                             <label for="nameInput">Full Name</label>
@@ -30,7 +30,7 @@
                                         <img class="input-icon" src="./assets/images/icons/user.png" alt="user">
                                     </span>
                                 </div>
-                                <input type="name" class="form-control " id="nameInput" placeholder="Enter your name">
+                                <input type="name" name="name" class="form-control " id="nameInput" placeholder="Enter your name" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -41,7 +41,7 @@
                                         <img class="input-icon" src="./assets/images/icons/email.png" alt="email">
                                     </span>
                                 </div>
-                                <input type="email" class="form-control " id="emailInput" placeholder="Enter your email">
+                                <input type="email" name="email" class="form-control " id="emailInput" placeholder="Enter your email" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -52,11 +52,13 @@
                                         <img class="input-icon" src="./assets/images/icons/lock.png" alt="password">
                                     </span>
                                 </div>
-                                <input type="password" class="form-control " id="passwordInput" placeholder="Enter your password">
+                                <input type="password" name="password" class="form-control " id="passwordInput" placeholder="Enter your password" required>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-block btn-custom">Sign Up</button>
+                        <button type="submit" name="reg_user" class="btn btn-block btn-custom">Sign Up</button>
                     </form>
+                    <br>
+                    <p>Already a member? <a href="./login.php">Sign in.</a></p>
                 </div>
             </div>
         </div>
