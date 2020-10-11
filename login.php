@@ -41,6 +41,8 @@
                         </div>
                         <button type="submit" class="btn btn-block btn-custom">Login</button>
                     </form>
+                    <br>
+                    <p>Doesn't have account yet? <a href="register.php">Create one.</a></p>
                 </div>
             </div>
         </div>
