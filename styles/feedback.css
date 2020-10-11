@@ -9,14 +9,14 @@ body {
     background: #ca1414;
 }
 
-.carddas {
-    background: #8f0809;
+.card {
     width: 30rem;
+    background: #8f0809;
     box-shadow: -15px 15px 0px 0px #6b0003;
 }
 
 .btn-custom {
-    background: #8f0809;
+    background: #6b0003;
     color: #ffffff;
 }
 

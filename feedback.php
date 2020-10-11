@@ -22,7 +22,7 @@
         We will get back to you as soon as we can.
     </p>
 
-    <div class="card mx-auto" style="width: 30rem; background: #6b0003;">
+    <div class="card mx-auto">
         <div class="card-body">
             <form>
                 <div class="form-group">
@@ -30,7 +30,7 @@
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text bg-light border-0">
-                                <img class="input-icon" src="images/icons/user.png" alt="user">
+                                <img class="input-icon" src="./assets/images/icons/user.png" alt="user">
                             </span>
                         </div>
                         <input type="name" class="form-control" id="nameInput" placeholder="Enter your name">
@@ -41,7 +41,7 @@
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text bg-light border-0">
-                                <img class="input-icon" src="images/icons/email.png" alt="email">
+                                <img class="input-icon" src="./assets/images/icons/email.png" alt="email">
                             </span>
                         </div>
                         <input type="email" class="form-control" id="emailInput" placeholder="Enter your email">
