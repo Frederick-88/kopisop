@@ -23,7 +23,7 @@
                     <form>
                         <h1>Create Account</h1>
                         <div class="form-group">
-                            <label for="nameInput">Fullname</label>
+                            <label for="nameInput">Full Name</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-light border-0">

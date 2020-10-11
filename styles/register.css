@@ -4,8 +4,7 @@
     font-family: 'GothamPro';
 }
 
-.leftside,
-.rightside {
+.leftside, .rightside {
     height: 100vh;
     width: 100%;
     overflow: hidden;
@@ -19,8 +18,7 @@
     }
 }
 
-.leftside,
-.btn-custom {
+.leftside, .btn-custom {
     background: #ca1414;
     color: #ffffff;
 }
