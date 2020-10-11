@@ -1,0 +1,21 @@
+.navbar {
+  height: 75px;
+  box-shadow: 0 10px 12px#6b0003
+}
+
+/* warna navbar title*/
+span {
+  color: #8f0809;
+  letter-spacing: 2px;
+  margin: 10px;
+}
+
+.nav-link {
+  padding: 20px 10px 10px;
+  margin: 60px;
+}
+
+/* not working yet*/
+.nav-link a:hover {
+  color: #8f0809;
+}
