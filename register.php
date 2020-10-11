@@ -14,7 +14,7 @@
     <div class="row no-gutters">
         <div class="col-md-5 no-gutters">
             <div class="leftside d-flex justify-content-center align-items-center">
-                <img src="images/logo.png" class="img-fluid" alt="kopisop">
+                <img src="./assets/images/logo.png" class="img-fluid" alt="kopisop">
             </div>
         </div>
         <div class="col-md-7 no-gutters">
@@ -27,7 +27,7 @@
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-light border-0">
-                                        <img class="input-icon" src="images/icons/user.png" alt="user">
+                                        <img class="input-icon" src="./assets/images/icons/user.png" alt="user">
                                     </span>
                                 </div>
                                 <input type="name" class="form-control " id="nameInput" placeholder="Enter your name">
@@ -38,7 +38,7 @@
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-light border-0">
-                                        <img class="input-icon" src="images/icons/email.png" alt="email">
+                                        <img class="input-icon" src="./assets/images/icons/email.png" alt="email">
                                     </span>
                                 </div>
                                 <input type="email" class="form-control " id="emailInput" placeholder="Enter your email">
@@ -49,7 +49,7 @@
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-light border-0">
-                                        <img class="input-icon" src="images/icons/lock.png" alt="password">
+                                        <img class="input-icon" src="./assets/images/icons/lock.png" alt="password">
                                     </span>
                                 </div>
                                 <input type="password" class="form-control " id="passwordInput" placeholder="Enter your password">
