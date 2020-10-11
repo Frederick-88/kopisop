@@ -29,7 +29,7 @@
     
         <!-- Tampilan Foto Menu -->
         
-            <div class="card w-125 ">
+            <div class="card w-100 ">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>

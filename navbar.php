@@ -28,8 +28,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/cart.php">Cart</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/account.php">Account</a>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="./account.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Account
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Settings</a>
                 </li>
             </ul>
         </div>
