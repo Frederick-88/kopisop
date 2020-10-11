@@ -1,0 +1,26 @@
+@import 'fonts/gotham.css';
+
+* {
+    font-family: 'GothamPro';
+    color: #ffffff;
+}
+
+body {
+    background: #ca1414;
+}
+
+.carddas {
+    background: #8f0809;
+    width: 30rem;
+    box-shadow: -15px 15px 0px 0px #6b0003;
+}
+
+.btn-custom {
+    background: #8f0809;
+    color: #ffffff;
+}
+
+.input-icon {
+    width: 25px;
+    height: 25px;
+}
