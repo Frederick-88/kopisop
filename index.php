@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +15,10 @@
 
 <body>
     <div class="bg-image">
-        <?php include 'navbar.php' ?>
+        <?php include 'navbar.php'; ?>
+        <div>
+            <h4><?php echo $_SESSION['username']; ?></h4>
+        </div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
@@ -35,7 +39,7 @@
                                     </div>
                                 </div>
                                 <div class="col-4">
-                                    
+
                                 </div>
                             </div>
                         </div>

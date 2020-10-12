@@ -1,3 +1,9 @@
+<?php include './model/Login.php'?>
+<?php 
+if (empty($_SESSION['id'])) {
+    header('location: ./model/Login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +21,16 @@
         <div class="col-md-7 no-gutters">
             <div class="leftside d-flex justify-content-center align-items-center">
                 <div class="card border-0" style="width: 20rem;">
-                    <form>
+                    <form action="./index.php" method="GET">
+                        <?php if (count($errors) > 0) : ?>
+                            <div class="alert alert-danger">
+                                <?php foreach ($errors as $error) : ?>
+                                    <li>
+                                        <?php echo $error; ?>
+                                    </li>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endif; ?>
                         <h1>Login Here</h1>
                         <div class="form-group">
                             <label for="emailInput">Email</label>

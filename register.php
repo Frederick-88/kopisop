@@ -1,3 +1,4 @@
+<?php include "./model/Register"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +21,8 @@
         <div class="col-md-7 no-gutters">
             <div class="rightside d-flex justify-content-center align-items-center">
                 <div class="card border-0" style="width: 25rem;">
-                    <form action="./model/registration.php" method="POST">
+                    <form action="./model/Register.php" method="POST">
+                        
                         <h1>Create Account</h1>
                         <div class="form-group">
                             <label for="nameInput">Full Name</label>
