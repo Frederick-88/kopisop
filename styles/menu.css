@@ -4,20 +4,24 @@
   font-family: "GothamPro";
 }
 
-body {
+.bg-custom {
   background-color: #ca1414 !important;
+  width: 100%;
+  min-height: 100vh;
+  
 }
 
-
-
-li {
-  display: inline-block;
+.bg-menu {
+  background-color: #ffffff;
+  width: 100%;
+  min-height: 100vh;
+  border-radius: 20px;
 }
 
-.menu {
-    color: #ca1414;
-}
-
-.foto {
-    
+ #top-header {
+  position: absolute;
+  top: 85px;
+  left: 200px;
+  box-shadow: 0 5px 12px #000000;
+  border-radius: 20px;
 }

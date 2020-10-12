@@ -12,31 +12,39 @@
 </head>
 
 <body>
-    <?php include "./navbar.php"; ?>
+    <div class="bg-custom">
+        <?php include "./navbar.php"; ?>
 
-    <!-- List Menu -->
-    <div class="container mt-5 overlay">
-        <div class="card w-100 ">
-            <div class="card-body ">
-                <ul class="d-flex justify-content-around">
-                    <li><a class="menu" href="#"><h5>hot coffee</h5></a></li>
-                    <li><a class="menu" href="#"><h5>iced coffee</h5></a></li>
-                    <li><a class="menu" href="#"><h5>non-coffee</h5></a></li>
-                    <li><a class="menu" href="#"><h5>snacks</h5></a></li>
-                </ul>
+        <div class="bg-menu container mt-5">
+            <div class="ml-5 mr-5" id="top-header">
+                <nav class="nav justify-content-center bg-light">
+                    <a class="nav-item nav-link" href="#">hot coffee</a>
+                    <a class="nav-item nav-link" href="#">iced coffee</a>
+                    <a class="nav-item nav-link" href="#">non-coffee</a>
+                    <a class="nav-item nav-link" href="#">snack</a>
+                </nav>
             </div>
-        </div>
-    
-        <!-- Tampilan Foto Menu -->
-        
-            <div class="card w-100 ">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+            <div class="container mt-5 pt-5">
+                <div class="row m-5">
+                    <div class="col-4">
+                        <div class="card border-0 rounded">
+                            <img class="card-img" src="assets/images/coffee1.jpg" alt="Card image">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card card border-0 rounded">
+                            <img class="card-img" src="assets/images/coffee1.jpg" alt="Card image">
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card card border-0 rounded">
+                            <img class="card-img" src="assets/images/coffee1.jpg" alt="Card image">
+                        </div>
+                    </div>
                 </div>
             </div>
-        
-
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

@@ -1,9 +1,7 @@
 .navbar {
-  height: 75px;
   box-shadow: 0 10px 12px#6b0003
 }
 
-/* warna navbar title*/
 span {
   color: #8f0809;
   letter-spacing: 2px;
@@ -12,10 +10,25 @@ span {
 
 .nav-link {
   padding: 20px 10px 10px;
-  margin: 60px;
-}
-
-/* not working yet*/
-.nav-link a:hover {
+  margin: 0 60px;
+  text-decoration: none;
   color: #8f0809;
 }
+
+.nav-item a:hover {
+  color: #6b0003;
+}
+
+.nav-item .active {
+  color: #4d0104;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(143, 8, 9, 0.5)' stroke-width='5' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: #8f0809;
+  border-width: 2px;
+  border-radius: 2px;
+} 
