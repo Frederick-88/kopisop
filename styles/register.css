@@ -11,13 +11,6 @@
     overflow: hidden;
 }
 
-@media screen and (min-width: 768px) {
-
-    .leftside,
-    .rightside {
-        height: 100vh;
-    }
-}
 
 .leftside,
 .btn-custom {
@@ -32,6 +25,6 @@
 }
 
 .input-icon {
-    width: 25px;
-    height: 25px;
+    width: 22px;
+    height: 22px;
 }

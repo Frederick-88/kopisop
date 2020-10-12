@@ -14,7 +14,7 @@
     <div class="row no-gutters">
         <div class="col-md-7 no-gutters">
             <div class="leftside d-flex justify-content-center align-items-center">
-                <div class="card border-0" style="width: 25rem;">
+                <div class="card border-0" style="width: 20rem;">
                     <form>
                         <h1>Login Here</h1>
                         <div class="form-group">
