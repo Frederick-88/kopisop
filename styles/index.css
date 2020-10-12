@@ -1,5 +1,17 @@
 @import 'fonts/gotham.css';
 
-*{
+* {
     font-family: 'GothamPro';
+    color: #ffffff;
 }
+
+
+.container-fluid {
+  background-image: url(../assets/images/background.jpeg);
+  object-fit: cover;
+  padding: 0;
+  height: 594px;
+}
+
+
+

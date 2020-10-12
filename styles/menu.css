@@ -1,0 +1,23 @@
+@import "fonts/gotham.css";
+
+* {
+  font-family: "GothamPro";
+}
+
+body {
+  background-color: #ca1414 !important;
+}
+
+
+
+li {
+  display: inline-block;
+}
+
+.menu {
+    color: #ca1414;
+}
+
+.foto {
+    
+}
