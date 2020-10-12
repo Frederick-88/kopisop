@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <img src="../../images/coffee-cup.jpeg" alt="Coffee-Cup">
+                    <img src="assets/images/coffee-cup.jpeg" alt="Coffee-Cup">
                 </div>
             </div>
         </div>
