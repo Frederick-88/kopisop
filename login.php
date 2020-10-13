@@ -1,5 +1,5 @@
-<?php include './model/Login.php'?>
-<?php 
+<?php include './model/Login.php' ?>
+<?php
 if (empty($_SESSION['id'])) {
     header('location: ./model/Login.php');
 }
@@ -17,6 +17,14 @@ if (empty($_SESSION['id'])) {
 </head>
 
 <body>
+    <?php if (isset($_SESSION['message'])) : ?>
+        <div class="alert <?= $_SESSION['type']; ?>">
+            <?php
+            echo $_SESSION['message'];
+            unset($_SESSION['message']);
+            ?>
+        </div>
+    <?php endif; ?>
     <div class="row no-gutters">
         <div class="col-md-7 no-gutters">
             <div class="leftside d-flex justify-content-center align-items-center">

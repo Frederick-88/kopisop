@@ -30,16 +30,20 @@
                     <div class="col-4">
                         <div class="card border-0 rounded">
                             <img class="card-img" src="assets/images/coffee1.jpg" alt="Card image">
+                            <button type="button" class="btn btn-info">Add</button>
+                        </div>
+                        
+                    </div>
+                    <div class="col-4">
+                        <div class="card card border-0 rounded">
+                            <img class="card-img" src="assets/images/coffee1.jpg" alt="Card image">
+                            <button type="button" class="btn btn-info">Add</button>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="card card border-0 rounded">
                             <img class="card-img" src="assets/images/coffee1.jpg" alt="Card image">
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="card card border-0 rounded">
-                            <img class="card-img" src="assets/images/coffee1.jpg" alt="Card image">
+                            <button type="button" class="btn btn-info">Add</button>
                         </div>
                     </div>
                 </div>
