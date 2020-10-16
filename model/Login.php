@@ -16,8 +16,8 @@ if (isset($_POST['login_user'])) {
     $query = "SELECT * FROM User where email='$email' LIMIT 1";
     $result = mysqli_query($mysqli, $query);
 
-    if (mysqli_num_rows($result) > 0) {
-        $errors['email'] = "Email already exists!";
+    if (mysqli_num_rows($result) < 0) {
+        $errors['email'] = "Please insert a valid email!";
     }
 
     if (count($errors) === 0) {

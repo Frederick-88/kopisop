@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu kopisop</title>
+    <title>Menu List for Hot Coffee</title>
 
-    <link rel="stylesheet" href="menu.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../styles/menu.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/menu.css">
 </head>
 
 <body>
     <div class="bg-custom">
-        <?php include "./navbar.php"; ?>
+        <?php include "../navbar.php"; ?>
 
         <div class="bg-menu container mt-5">
             <div class="ml-5 mr-5" id="top-header">
