@@ -1,3 +1,4 @@
+<?php include "./model/Register.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +12,14 @@
 </head>
 
 <body>
+    <?php if (isset($_SESSION['message'])) : ?>
+        <div class="alert <?= $_SESSION['type']; ?>">
+            <?php
+            echo $_SESSION['message'];
+            unset($_SESSION['message']);
+            ?>
+        </div>
+    <?php endif; ?>
     <div class="row no-gutters">
         <div class="col-md-5 no-gutters">
             <div class="leftside d-flex justify-content-center align-items-center">
@@ -20,7 +29,7 @@
         <div class="col-md-7 no-gutters">
             <div class="rightside d-flex justify-content-center align-items-center">
                 <div class="card border-0" style="width: 25rem;">
-                    <form action="./model/registration.php" method="POST">
+                    <form action="./model/Register.php" method="POST">
                         <h1>Create Account</h1>
                         <div class="form-group">
                             <label for="nameInput">Full Name</label>
