@@ -19,9 +19,9 @@
             <div class="ml-5 mr-5" id="top-header">
                 <nav class="nav justify-content-center bg-light">
                     <a class="nav-item nav-link" href="./Menu/hotCoffee.php">hot coffee</a>
-                    <a class="nav-item nav-link" href="./Menu/icedCoffee.php">iced coffee</a>
-                    <a class="nav-item nav-link" href="./Menu/nonCoffee.php">non-coffee</a>
-                    <a class="nav-item nav-link" href="./Menu/Snack.php">snack</a>
+                    <a class="nav-item nav-link" href="#">iced coffee</a>
+                    <a class="nav-item nav-link" href="./nonCoffee.php">non-coffee</a>
+                    <a class="nav-item nav-link" href=".Snack.php">snack</a>
                 </nav>
             </div>
 
