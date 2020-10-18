@@ -18,8 +18,9 @@ if (isset($_POST['reg_user'])) {
     $query = "SELECT * FROM User WHERE email='$email' LIMIT 1";
     $result = mysqli_query($mysqli, $query);
 
-    if (mysqli_num_rows($result) > 0) {
+    if (mysqli_num_rows($result) > 1) {
         $errors['email'] = "Email already exists";
+        
     }
 
     if (count($errors) === 0) {
@@ -27,15 +28,14 @@ if (isset($_POST['reg_user'])) {
         $stmt = $mysqli->prepare($query);
         $stmt->bind_param('sss', $name, $email, $password);
         $result = $stmt->execute();
+        print_r($stmt);
 
         if ($result) {
-            $user_id = $stmt->insert_id;
             $stmt->close();
 
             // TO DO: send verification email to user
             // sendVerificationEmail($email, $token);
 
-            $_SESSION['id'] = $user_id;
             $_SESSION['name'] = $name;
             $_SESSION['email'] = $email;
             $_SESSION['verified'] = false;

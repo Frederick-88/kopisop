@@ -14,10 +14,11 @@ if (isset($_POST['login_user'])) {
     $password = $_POST['password'];
 
     $query = "SELECT * FROM User where email='$email' LIMIT 1";
+
     $result = mysqli_query($mysqli, $query);
 
-    if (mysqli_num_rows($result) < 0) {
-        $errors['email'] = "Please insert a valid email!";
+    if (!$result) {
+        $errors['email'] = "Your email doesn't exist on our system!";
     }
 
     if (count($errors) === 0) {
@@ -30,7 +31,7 @@ if (isset($_POST['login_user'])) {
             $user = $result->fetch_assoc();
             if (password_verify($password, $user['password'])) { // if password matches
                 $stmt->close();
-
+                echo 'yes';
                 $_SESSION['id'] = $user['id'];
                 $_SESSION['name'] = $user['name'];
                 $_SESSION['email'] = $user['email'];
@@ -43,7 +44,7 @@ if (isset($_POST['login_user'])) {
                 $errors['login_fail'] = "Wrong Email / Password";
             }
         } else {
-            $_SESSION['message'] = "Database error. Login failed!";
+            $_SESSION['message'] = "Login Failed! Please re-check your data.";
             $_SESSION['type'] = "alert-danger";
 
             header('location: ../login.php');

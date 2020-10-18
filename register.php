@@ -1,4 +1,4 @@
-<?php include "./model/Register.php"; ?>
+<?php include "./model/Register_controller.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 

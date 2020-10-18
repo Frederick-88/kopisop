@@ -1,6 +1,14 @@
+<?php
+session_start();
+include './Functions/functions.php';
+if($_SESSION['name'] == '') {
+	header("location: ./login.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +21,8 @@
 
 <body>
     <div class="bg-custom">
-        <?php include "./navbar.php"; ?>
+        <?php include "./navbar.php";
+        ?>
 
         <div class="bg-menu container mt-5">
             <div class="ml-5 mr-5" id="top-header">
@@ -25,29 +34,40 @@
                 </nav>
             </div>
 
-            <div class="container mt-5 pt-5">
-                <div class="row m-5">
-                    <div class="col-4">
-                        <div class="card border-0 rounded">
-                            <img class="card-img" src="assets/images/coffee1.jpg" alt="Card image">
-                            <button type="button" class="btn btn-info">Add</button>
+            <?php include "./Functions/functions.php";
+
+            $query = mysqli_query($mysqli, "SELECT * FROM Food")
+                or die($mysqli->error);
+
+            while ($data = $query->fetch_assoc()) {
+            ?>
+
+                <img class="card-img" src="<?php echo $data['food_pic']; ?>" alt="Image 1">
+                <button type="button" class="btn btn-info" name="save_menu">Add</button>
+
+                <div class="container mt-5 pt-5">
+                    <div class="row m-5">
+                        <div class="col-4">
+                            <div class="card border-0 roun'food_pic')ded">
+                                <img class="card-img" src="<?= $data['food_pic'] ?>" alt="Card image">
+                                <button type="button" class="btn btn-info">Add</button>
+                            </div>
                         </div>
-                        
-                    </div>
-                    <div class="col-4">
-                        <div class="card card border-0 rounded">
-                            <img class="card-img" src="assets/images/coffee1.jpg" alt="Card image">
-                            <button type="button" class="btn btn-info">Add</button>
+                        <div class="col-4">
+                            <div class="card card border-0 rounded">
+                                <img class="card-img" src="<?= $data['food_pic'] ?>" alt="Card image">
+                                <button type="button" class="btn btn-info">Add</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="card card border-0 rounded">
-                            <img class="card-img" src="assets/images/coffee1.jpg" alt="Card image">
-                            <button type="button" class="btn btn-info">Add</button>
+                        <div class="col-4">
+                            <div class="card card border-0 rounded">
+                                <img class="card-img" src="<?= $data['food_pic'] ?>" alt="Card image">
+                                <button type="button" class="btn btn-info">Add</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            <?php } ?>
         </div>
     </div>
 
