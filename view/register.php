@@ -36,7 +36,7 @@
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-light border-0">
-                                        <img class="input-icon" src="./assets/images/icons/user.png" alt="user">
+                                        <img class="input-icon" src="./assets/icons/user.png" alt="user">
                                     </span>
                                 </div>
                                 <input type="name" name="name" class="form-control " id="nameInput" placeholder="Enter your name" required>
@@ -47,7 +47,7 @@
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-light border-0">
-                                        <img class="input-icon" src="./assets/images/icons/email.png" alt="email">
+                                        <img class="input-icon" src="./assets/icons/email.png" alt="email">
                                     </span>
                                 </div>
                                 <input type="email" name="email" class="form-control " id="emailInput" placeholder="Enter your email" required>
@@ -58,7 +58,7 @@
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-light border-0">
-                                        <img class="input-icon" src="./assets/images/icons/lock.png" alt="password">
+                                        <img class="input-icon" src="./assets/icons/lock.png" alt="password">
                                     </span>
                                 </div>
                                 <input type="password" name="password" class="form-control " id="passwordInput" placeholder="Enter your password" required>

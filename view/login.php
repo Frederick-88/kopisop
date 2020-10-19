@@ -45,7 +45,7 @@ if (empty($_SESSION['id'])) {
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-light border-0">
-                                        <img class="input-icon" src="./assets/images/icons/email.png" alt="email">
+                                        <img class="input-icon" src="./assets/icons/email.png" alt="email">
                                     </span>
                                 </div>
                                 <input type="email" name="email" class="form-control " id="emailInput" placeholder="Enter your email" required>
@@ -56,7 +56,7 @@ if (empty($_SESSION['id'])) {
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-light border-0">
-                                        <img class="input-icon" src="./assets/images/icons/lock.png" alt="password">
+                                        <img class="input-icon" src="./assets/icons/lock.png" alt="password">
                                     </span>
                                 </div>
                                 <input type="password" name="password" class="form-control " id="passwordInput" placeholder="Enter your password" required>
