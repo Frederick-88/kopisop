@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     
-    <link rel="stylesheet" href="styles/feedback.css">
+    <link rel="stylesheet" href="../styles/feedback.css">
     <title>Feedback</title>
 </head>
 
@@ -30,7 +30,7 @@
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text bg-light border-0">
-                                <img class="input-icon" src="./assets/icons/user.png" alt="user">
+                                <img class="input-icon" src="../assets/icons/user.png" alt="user">
                             </span>
                         </div>
                         <input type="name" class="form-control" id="nameInput" placeholder="Enter your name">
@@ -41,7 +41,7 @@
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text bg-light border-0">
-                                <img class="input-icon" src="./assets/icons/email.png" alt="email">
+                                <img class="input-icon" src="../assets/icons/email.png" alt="email">
                             </span>
                         </div>
                         <input type="email" class="form-control" id="emailInput" placeholder="Enter your email">
