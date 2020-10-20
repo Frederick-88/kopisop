@@ -21,6 +21,7 @@ if (isset($_POST['login_user'])) {
             $_SESSION['name'] = $user['name'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['login'] = true;
+            $_SESSION['role'] = $user['role'];
             header('location: ../view/index.php');
             exit();
         } else {
