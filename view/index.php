@@ -1,9 +1,8 @@
-<?php session_start(); ?>
-<?php
-if (empty($_SESSION['id'])) {
-    header('location: ../view/login.php');
-}
-?>
+<?php session_start() ?>
+<?php if (!isset($_SESSION['login'])) {
+    header('location:./login.php');
+} ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,12 +18,12 @@ if (empty($_SESSION['id'])) {
 </head>
 
 <body>
+    <?php include '../component/navbar.php'; ?>
     <div class="bg-image">
-        <?php include '../component/navbar.php'; ?>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    <div class=" container mt-md-5 pt-5">
+                    <div class="mt-md-5 pt-5">
                         <h1>Start your day with kopisop</h1>
                         <p>Established at 2020, we create our coffee handmade and serve it with pride.</p>
                         <div class="mt-md-5 pt-md-5">
@@ -48,7 +47,7 @@ if (empty($_SESSION['id'])) {
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
-                    <img src="../assets/images/coffee-cup.png" style="width:100%; height:100% ;object-fit:cover;" alt="">
+                    <img src="../assets/images/tangan_kopisop.png" class="img-fluid" alt="">
                 </div>
             </div>
         </div>

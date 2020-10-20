@@ -1,4 +1,9 @@
 <?php include "../model/Register.php"; ?>
+<?php session_start() ?>
+<?php if (isset($_SESSION['login'])) {
+    header('location:./index.php');
+} ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,14 +20,14 @@
 <body>
     <?php include '../component/alert.php' ?>
     <div class="row no-gutters">
-        <div class="col-md-5 no-gutters">
+        <div class="col-lg-5 col-md-12 no-gutters">
             <div class="leftside">
                 <div class="h-100 d-flex justify-content-center align-items-center">
                     <img src="../assets/images/logo.png" class="img-fluid" alt="kopisop">
                 </div>
             </div>
         </div>
-        <div class="col-md-7 no-gutters">
+        <div class="col-lg-7 col-md-12 no-gutters">
             <div class="rightside d-flex justify-content-center align-items-center">
                 <div class="card border-0" style="width: 25rem;">
                     <form action="../model/Register.php" method="POST">

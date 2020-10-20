@@ -1,6 +1,4 @@
-<link rel="stylesheet" href="styles/navbar.css?">
-
-<nav class="navbar navbar-expand-lg bg-white position-sticky" role="navigation">
+<nav class="navbar navbar-expand-lg bg-white sticky-top" role="navigation">
     <a class="navbar-brand" href="index.php"><span>kopisop</span></a>
     <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -25,7 +23,7 @@
                     <a class="dropdown-item" href="#">Settings</a>
                     <a class="dropdown-item" href="#">History</a>
                     <a class="dropdown-item" href="#">Feedback</a>
-                    <a class="dropdown-item" href="#">Logout</a>
+                    <a class="dropdown-item" href="../model/Logout.php">Logout</a>
             </li>
         </ul>
     </div>

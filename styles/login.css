@@ -28,7 +28,7 @@
     height: 22px;
 }
 
-@media (min-width: 320px) and (max-width: 767px) {
+@media (min-width: 320px) and (max-width: 1023px) {
     .rightside {
         display: none;
     }

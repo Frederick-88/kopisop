@@ -5,23 +5,25 @@
 }
 
 .bg-custom {
-  background-color: #ca1414 !important;
   width: 100%;
-  min-height: 100vh;
-  
+  min-height:100vh;
+  background-color: #ca1414 ;
+  background-size: cover;
+  overflow: hidden;
 }
 
 .bg-menu {
   background-color: #ffffff;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   border-radius: 20px;
 }
+.card-img-overlay{
+  opacity: 0;
+  transition: 0.3s ease;
+}
 
- #top-header {
-  position: absolute;
-  top: 85px;
-  left: 200px;
-  box-shadow: 0 5px 12px #000000;
-  border-radius: 20px;
+.card-img-overlay:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.596)
 }

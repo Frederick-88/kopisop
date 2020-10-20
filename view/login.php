@@ -1,4 +1,7 @@
-<?php include '../model/Login.php' ?>
+<?php include '../model/Login.php'?>
+<?php if (isset($_SESSION['login'])) {
+    header('location:./index.php');
+} ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,19 +20,10 @@
 <body>
     <?php include '../component/alert.php' ?>
     <div class="row no-gutters">
-        <div class="col-md-7 no-gutters">
+        <div class="col-lg-7 col-md-12 no-gutters">
             <div class="leftside d-flex justify-content-center align-items-center">
                 <div class="card border-0" style="width: 20rem;">
-                    <form action="./index.php" method="GET">
-                        <?php if (count($errors) > 0) : ?>
-                            <div class="alert alert-danger">
-                                <?php foreach ($errors as $error) : ?>
-                                    <li>
-                                        <?php echo $error; ?>
-                                    </li>
-                                <?php endforeach; ?>
-                            </div>
-                        <?php endif; ?>
+                    <form action="../model/Login.php" method="POST">
                         <h1>Login Here</h1>
                         <div class="form-group">
                             <label for="emailInput">Email</label>
@@ -60,7 +54,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-5 no-gutters">
+        <div class="col-lg-5 col-md-12 no-gutters">
             <div class="rightside">
                 <div class="h-100 d-flex justify-content-center align-items-center">
                     <div class="flex-column">
