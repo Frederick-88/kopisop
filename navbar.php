@@ -33,7 +33,7 @@
                     <a class="nav-link" href="/model/Logout_controller.php">Logout</a>
                 </li>
 
-                <!-- <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="./account.php" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Account
                     </a>
@@ -43,7 +43,7 @@
                         <a href="#" class="dropdown-item" >Feedback</a>
                         <a href="./model/Logout_controller.php" class="dropdown-item">Log Out</a>
                     </div>
-                </li> -->
+                </li>
             </ul>
         </div>
     </nav>
