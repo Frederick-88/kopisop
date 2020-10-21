@@ -72,6 +72,7 @@
                                         <button type="button" name="add_cart" class="btn btn-danger"><i class="fas fa-cart-plus"></i>Add to cart</button>
                                     </div>
                                 <?php } ?>
+                                
 
                                 <!-- Modal Delete -->
                                 <div class="modal fade" id="modalDel<?= $row['id'] ?>" tabindex="-1" tabindex="-1" role="dialog">
