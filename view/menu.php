@@ -72,6 +72,8 @@
                                         <button type="button" name="add_cart" class="btn btn-danger"><i class="fas fa-cart-plus"></i>Add to cart</button>
                                     </div>
                                 <?php } ?>
+
+                                <!-- Modal Delete -->
                                 <div class="modal fade" id="modalDel<?= $row['id'] ?>" tabindex="-1" tabindex="-1" role="dialog">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
@@ -91,6 +93,8 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <!-- Modal Edit -->
                                 <div class="modal fade" id="modalEdit<?= $row['id'] ?>" tabindex="-1" role="dialog">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
@@ -122,16 +126,15 @@
                                             </div>
                                         </div>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-
-                    <?php } ?>
-
-
-
-
                 </div>
+
+            <?php } ?>
+
+
 
             </div>
         </div>
