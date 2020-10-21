@@ -1,3 +1,8 @@
+<?php include '../model/Login_controller.php'?>
+<?php if (isset($_SESSION['login'])) {
+    header('location:./index.php');
+} ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,33 +10,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css">
-    <link rel="stylesheet" href="styles/login.css">
+
+    <link rel="stylesheet" href="../styles/alert.css">
+    <link rel="stylesheet" href="../styles/login.css">
+
     <title>Login</title>
 </head>
 
 <body>
-    <?php "./model/Login_controller"; ?>
-    <?php if (isset($_SESSION['message'])) : ?>
-        <div class="alert <?= $_SESSION['type']; ?>">
-            <?php
-            echo $_SESSION['message'];
-            unset($_SESSION['message']);
-            ?>
-        </div>
-    <?php endif; ?>
+    <?php include '../component/alert.php' ?>
     <div class="row no-gutters">
-        <div class="col-md-7 no-gutters">
+        <div class="col-lg-7 col-md-12 no-gutters">
             <div class="leftside d-flex justify-content-center align-items-center">
                 <div class="card border-0" style="width: 20rem;">
-                    <form action="./index.php" method="GET">
+                    <form action="../model/Login_controller.php" method="POST">
                         <h1>Login Here</h1>
                         <div class="form-group">
                             <label for="emailInput">Email</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-light border-0">
-                                        <img class="input-icon" src="./assets/images/icons/email.png" alt="email">
+                                        <img class="input-icon" src="../assets/icons/email.png" alt="email">
                                     </span>
                                 </div>
                                 <input type="email" name="email" class="form-control " id="emailInput" placeholder="Enter your email" required>
@@ -42,7 +41,7 @@
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text bg-light border-0">
-                                        <img class="input-icon" src="./assets/images/icons/lock.png" alt="password">
+                                        <img class="input-icon" src="../assets/icons/lock.png" alt="password">
                                     </span>
                                 </div>
                                 <input type="password" name="password" class="form-control " id="passwordInput" placeholder="Enter your password" required>
@@ -55,11 +54,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-5 no-gutters">
-            <div class="rightside d-flex justify-content-center align-items-center">
-                <div class="flex-column">
-                    <h1 class="display-3 text-center">Welcome</h1>
-                    <h3 class="pl-5 pr-5 text-center">Fill up personal information and enjoy!</h3>
+        <div class="col-lg-5 col-md-12 no-gutters">
+            <div class="rightside">
+                <div class="h-100 d-flex justify-content-center align-items-center">
+                    <div class="flex-column">
+                        <h1 class="display-3 text-center">Welcome</h1>
+                        <h3 class="pl-5 pr-5 text-center">Fill up personal information and enjoy!</h3>
+                    </div>
                 </div>
             </div>
         </div>

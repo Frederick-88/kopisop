@@ -1,11 +1,8 @@
 <?php
+require '../library/process.php';
+
 session_start();
 
-$mysqli = new mysqli('localhost', 'root', '', 'kopisop') or die(mysqli_error($mysqli));
-
-$name = '';
-$email = '';
-$password = '';
 $errors = [];
 
 // LOGIN
@@ -17,37 +14,27 @@ if (isset($_POST['login_user'])) {
 
     $result = mysqli_query($mysqli, $query);
 
-    if (!$result) {
-        $errors['email'] = "Your email doesn't exist on our system!";
+    if (mysqli_num_rows($result) === 1) {
+        $user = $result->fetch_assoc();
+
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['id'] = $user['id'];
+            $_SESSION['name'] = $user['name'];
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['login'] = true;
+            $_SESSION['role'] = $user['role'];
+            header('location: ../view/menu.php');
+            // exit();
+        } else {
+            $errors['login_fail'] = "Wrong Password";
+        }
+    } else {
+        $errors['login_fail'] = "Email doesn't exists";
     }
 
-    if (count($errors) === 0) {
-        $query = "SELECT * FROM User WHERE email=? LIMIT 1";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param('ss', $username, $password);
-
-        if ($stmt->execute()) {
-            $result = $stmt->get_result();
-            $user = $result->fetch_assoc();
-            if (password_verify($password, $user['password'])) { // if password matches
-                $stmt->close();
-                echo 'yes';
-                $_SESSION['id'] = $user['id'];
-                $_SESSION['name'] = $user['name'];
-                $_SESSION['email'] = $user['email'];
-                $_SESSION['verified'] = $user['verified'];
-                $_SESSION['message'] = 'You are logged in!';
-                $_SESSION['type'] = 'alert-success';
-                header('location: ../index.php');
-                exit(0);
-            } else { // if password does not match
-                $errors['login_fail'] = "Wrong Email / Password";
-            }
-        } else {
-            $_SESSION['message'] = "Login Failed! Please re-check your data.";
-            $_SESSION['type'] = "alert-danger";
-
-            header('location: ../login.php');
-        }
+    if (count($errors) > 0) {
+        $_SESSION['message'] = $errors['login_fail'];
+        $_SESSION['type'] = "alert-danger";
+        header('location: ../view/login.php');
     }
 }

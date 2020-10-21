@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css">
+    
     <link rel="stylesheet" href="styles/feedback.css">
-    <title>Login</title>
+    <title>Feedback</title>
 </head>
 
 <body>
@@ -30,7 +30,7 @@
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text bg-light border-0">
-                                <img class="input-icon" src="./assets/images/icons/user.png" alt="user">
+                                <img class="input-icon" src="./assets/icons/user.png" alt="user">
                             </span>
                         </div>
                         <input type="name" class="form-control" id="nameInput" placeholder="Enter your name">
@@ -41,7 +41,7 @@
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text bg-light border-0">
-                                <img class="input-icon" src="./assets/images/icons/email.png" alt="email">
+                                <img class="input-icon" src="./assets/icons/email.png" alt="email">
                             </span>
                         </div>
                         <input type="email" class="form-control" id="emailInput" placeholder="Enter your email">

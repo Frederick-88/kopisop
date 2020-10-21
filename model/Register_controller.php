@@ -1,7 +1,7 @@
 <?php
-session_start();
+require '../library/process.php';
 
-$mysqli = new mysqli('localhost', 'root', '', 'kopisop') or die(mysqli_error($mysqli));
+session_start();
 
 $name = "";
 $email = "";
@@ -41,7 +41,7 @@ if (isset($_POST['reg_user'])) {
             $_SESSION['verified'] = false;
             $_SESSION['message'] = 'Account success registered!';
             $_SESSION['type'] = 'alert-success';
-            header('location: ../login.php');
+            header('location: ../view/login.php');
         } else {
             $_SESSION['error_msg'] = "Database error: Could not register user";
         }
@@ -49,6 +49,6 @@ if (isset($_POST['reg_user'])) {
         $_SESSION['message'] = $errors['email'];
         $_SESSION['type'] = "alert-danger";
 
-        header('location: ../register.php');
+        header('location: ../view/register.php');
     }
 }

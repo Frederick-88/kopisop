@@ -6,7 +6,7 @@ include '../library/process.php';
 
 if (isset($_POST['save_menu'])) {
     // The path to srgtore the uploaded image
-    $target         = __DIR__ . "/Images/image_db.php";
+    $target         = __DIR__ . "/Images/Foods/";
 
     // Check file extension
     $file_extension = array('png', 'jpg', 'jpeg');
@@ -52,7 +52,27 @@ if (isset($_POST['save_menu'])) {
     // header("location: ../view/index_author.php");
 }
 
+if (isset($_GET['delete_menu'])) {
+    $id = $_GET['delete_menu'];
 
+    $query = "SELECT kopisop FROM Food WHERE id=$id";
+    $result = $mysqli->query($query);
+    $row = $result->fetch_assoc();
+    $imagepath = $row['photo'];
+    unlink($imagepath);
 
+    $query = "DELETE FROM Food WHERE id=$id";
+    $result = $mysqli->query($query);
+
+    header('location:../view/menu.php');
+}
+
+if (isset($_POST['update'])) {
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $food_pic = $_POST['food_pic'];
+
+    $query = "UPDATE Food SET name=$name, price='$price', food_pic='$food_pic'";
+}
 
 ?>

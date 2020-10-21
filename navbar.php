@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="./menu.php">Our Menu<span class="sr-only">(current)</span></a>
+                    <a class="nav-link active" href="./menu.php">Menu<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/inbox.php">Inbox</a>
