@@ -13,7 +13,7 @@ if (isset($_POST['save'])) {
     move_uploaded_file($_FILES['image']['tmp_name'], $photo);
 
     $query = "INSERT INTO Food (name, price, food_pic, category_id) VALUE ('$name','$price','$photo','$category')";
-    $result = $mysqli->query($query);
+    $result = $mysqli->query($query) or die(mysqli_error($mysqli));
 
     header('location:../view/menu.php');
 }
