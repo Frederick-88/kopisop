@@ -1,4 +1,4 @@
-<div class="modal fade" id="modalDel<?= $row['id'] ?>" tabindex="-1" tabindex="-1" role="dialog">
+<div class="modal fade" id="modalDel<?= $row['food_id'] ?>" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -12,7 +12,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a href="../model/action.php?delete_menu=<?= $row['id']; ?>" class="btn btn-danger mr-2">Delete</a>
+                <a href="../model/action.php?delete=<?= $row['food_id']; ?>" class="btn btn-danger mr-2">Delete</a>
             </div>
         </div>
     </div>

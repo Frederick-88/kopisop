@@ -1,8 +1,3 @@
-<?php session_start() ?>
-<?php if (!isset($_SESSION['login'])) {
-    header('location:./login.php');
-} ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
