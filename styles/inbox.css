@@ -1,0 +1,11 @@
+@import 'fonts/gotham.css';
+
+* {
+    font-family: 'GothamPro';
+    color: #ffffff;
+}
+
+body {
+    background: #ca1414;
+    margin-bottom: 50px;
+}

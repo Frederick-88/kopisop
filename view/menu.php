@@ -9,12 +9,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Menu kopisop</title>
+    <title>Menu</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styles/navbar.css?">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../styles/navbar.css">
 
     <link rel="stylesheet" href="../styles/menu.css">
 </head>
@@ -43,9 +41,9 @@
                     <?php while ($row = $result->fetch_assoc()) { ?>
                         <div class="col mb-4">
                             <div class="card">
-                                <img class="card-img" name="food_pic" src=<?= $row['food_pic']; ?> alt="...">
+                                <img class="card-img" name="food_pic" src="../assets/images/iced_cappucino.jpg" alt="...">
                                 <div class="card-img-overlay text-white d-flex flex-column justify-content-end">
-                                    <h4 class="card-title">Bologna</h4>
+                                    <h4 class="card-title">Iced Coffee</h4>
                                     <h6 class="card-subtitle mb-2">Emilia-Romagna Region, Italy</h6>
                                     <p class="card-text">It is the seventh most populous city in Italy, at the heart of a metropolitan area of about one million people. </p>
                                     <div class="link d-flex">
@@ -57,10 +55,10 @@
                             <div class="row" style="margin-top: 10px">
                                 <?php if (isset($_SESSION['role']) == "1") { ?>
                                     <div class="col-md-6">
-                                        <a href="#" type="button" name="edit_menu" class="btn btn-light" data-toggle="modal" data-target="#modalEdit<?= $row['id'] ?>"> Edit</a>
+                                        <a href="#" type="button" name="edit_menu" class="btn btn-secondary"    data-toggle="modal" data-target="#modalEdit<?= $row['id'] ?>"> Edit</a>
                                     </div>
                                     <div class="col-md-6">
-                                        <a href="#" type="button" name="delete_menu" class="btn btn-light" data-toggle="modal" data-target="#modalDel<?= $row['id'] ?>">Delete</a>
+                                        <a href="#" type="button" name="delete_menu" class="btn btn-danger" data-toggle="modal" data-target="#modalDel<?= $row['id'] ?>">Delete</a>
                                     </div>
 
                                 <?php } else { ?>

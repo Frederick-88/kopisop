@@ -6,13 +6,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="./menu.php">Our Menu<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="../view/menu.php">Menu<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/inbox.php">Inbox</a>
+                <a class="nav-link" href="../view/inbox.php">Inbox</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/cart.php">Cart</a>
+                <a class="nav-link" href="../view/cart.php">Cart</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -22,8 +22,10 @@
                 <div class="dropdown-menu dropdown-menu-right" id="dropdownMenuButton">
                     <a class="dropdown-item" href="#">Settings</a>
                     <a class="dropdown-item" href="#">History</a>
-                    <a class="dropdown-item" href="#">Feedback</a>
                     <a class="dropdown-item" href="../model/Logout.php">Logout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../view/cart.php">Feedback</a>
             </li>
         </ul>
     </div>

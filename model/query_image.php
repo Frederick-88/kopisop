@@ -73,6 +73,8 @@ if (isset($_POST['update'])) {
     $food_pic = $_POST['food_pic'];
 
     $query = "UPDATE Food SET name=$name, price='$price', food_pic='$food_pic'";
+     
+    header('location:../view/menu.php');
 }
 
 ?>
