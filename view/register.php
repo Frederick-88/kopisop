@@ -1,4 +1,4 @@
-<?php include "../model/Register_controller.php"; ?>
+<?php include "../model/Register.php"; ?>
 <?php if (isset($_SESSION['login'])) {
     header('location:./index.php');
 } ?>
