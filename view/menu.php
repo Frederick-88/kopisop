@@ -23,12 +23,12 @@
     <div class="bg-custom">
         <div class="container mt-5">
             <div class="bg-menu p-5">
-                <? if (isset($_SESSION['role'])=="1"){?>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAdd">
-                    Add Food Here
-                </button>
-                <?php include '../component/modal_add.php' ?>
-                <?}?>
+                <?php if ($_SESSION['role'] === "1") { ?>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAdd">
+                        Add Food Here
+                    </button>
+                    <?php include '../component/modal_add.php' ?>
+                <?php } ?>
                 <?php
                 require '../library/process.php';
                 $query = "SELECT * FROM Food";
@@ -36,7 +36,7 @@
                 ?>
 
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-                    <? while($row=$result->fetch_assoc()){?>
+                    <?php while($row=$result->fetch_assoc()){?>
                     <div class="col mt-4 mb-4">
                         <div class="card mb-4">
                             <div class="view overlay">
@@ -47,21 +47,21 @@
                                 <p class="card-text">
                                     Price : Rp <?= number_format($row['price'], 0, ".", "."); ?>
                                 </p>
-                                <? if (isset($_SESSION['role'])=="1"){?>
-                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalEdit<?= $row['food_id'] ?>">Edit</button>
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDel<?= $row['food_id'] ?>">Delete</button>
-                                <?php
-                                include '../component/modal_delete.php';
-                                include '../component/modal_edit.php'
-                                ?>
-                                <?}else {?>
-                                <button type="button" class="btn btn-danger btn-block">Add to Cart</button>
-                                <?}?>
+                                <?php if ($_SESSION['role'] === "1") { ?>
+                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalEdit<?= $row['food_id'] ?>">Edit</button>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDel<?= $row['food_id'] ?>">Delete</button>
+                                    <?php
+                                    include '../component/modal_delete.php';
+                                    include '../component/modal_edit.php'
+                                    ?>
+                                    <?php }else {?>
+                                    <button type="button" class="btn btn-danger btn-block">Add to Cart</button>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
 
-                    <?} ?>
+                    <?php } ?>
                 </div>
 
 

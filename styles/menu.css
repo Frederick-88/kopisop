@@ -21,7 +21,11 @@
 
 .card-img-top{
   width:100%; 
+<<<<<<< HEAD
   height:250px;
+=======
+  height:170px;
+>>>>>>> b395d94eb894decc32168dee2ae2da3f90e8dd88
   object-fit: cover;
 }
 /* .card-img-overlay{
