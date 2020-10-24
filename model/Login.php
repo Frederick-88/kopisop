@@ -17,12 +17,12 @@ if (isset($_POST['login_user'])) {
         $user = $result->fetch_assoc();
 
         if (password_verify($password, $user['password'])) {
-            $_SESSION['id'] = $user['id'];
+            $_SESSION['id'] = $user['user_id'];
             $_SESSION['name'] = $user['name'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['login'] = true;
             $_SESSION['role'] = $user['role'];
-            header('location: ../view/index.php');
+            header('location: ../view/menu.php');
             exit();
         } else {
             $errors['login_fail'] = "Wrong Password";

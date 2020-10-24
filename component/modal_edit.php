@@ -40,7 +40,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <input type="submit" name="update" class="btn btn-success" value="Edit">
+                        <input type="submit" name="update" class="btn btn-danger" value="Edit">
                     </div>
                 </form>
             </div>
