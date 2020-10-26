@@ -1,3 +1,8 @@
+<?php session_start() ?>
+<?php if (!isset($_SESSION['login'])) {
+    header('location:./login.php');
+} ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +18,6 @@
 
 <body>
     <?php include '../component/navbar.php'; ?>
-
     <p style="margin-top: 25px; margin-left: 25px; font-size: 48px">
         <span style="color: white">Send Us</span>
         <span style="color: yellow">Feedback!</span>

@@ -3,6 +3,7 @@
 <?php if (!isset($_SESSION['login'])) {
     header('location:./login.php');
 } ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,12 +41,12 @@
                     <div class="col mt-4 mb-4">
                         <div class="card mb-4">
                             <div class="view overlay">
-                                <img class="card-img-top" src="<?= $row['food_pic'] ?>">
+                                <img class="card-img-top" src="<?php echo $row['food_pic'] ?>">
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title"><b><?= $row['name']; ?></b></h4>
                                 <p class="card-text">
-                                    Price : Rp <?= number_format($row['price'], 0, ".", "."); ?>
+                                    Price : Rp <?php echo number_format($row['price'], 0, ".", "."); ?>
                                 </p>
                                 <?php if ($_SESSION['role'] === "1") { ?>
                                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalEdit<?= $row['food_id'] ?>">Edit</button>
