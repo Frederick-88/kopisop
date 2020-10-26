@@ -15,20 +15,6 @@
                 <a class="nav-link" href="../view/cart.php">Cart</a>
             </li>
 
-<<<<<<< HEAD
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="./account.php" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Account
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" id="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Settings</a>
-                    <a class="dropdown-item" href="#">History</a>
-                    <a class="dropdown-item" href="../model/Logout.php">Logout</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../view/cart.php">Feedback</a>
-            </li>
-=======
             <?php if (isset($_SESSION['login'])) { ?>
                 
 
@@ -36,7 +22,7 @@
                     <a class="nav-link dropdown-toggle" href="./account.php" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <?php echo $_SESSION['name'] ?>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" id="dropdownMenuButton">
+                    <div class="dropdown-menu dropdown  -menu-right" id="dropdownMenuButton">
                         <a class="dropdown-item" href="#">Settings</a>
                         <a class="dropdown-item" href="#">History</a>
                         <a class="dropdown-item" href="../view/feedback.php">Feedback</a>
@@ -50,7 +36,6 @@
                     <a class="nav-link" href="../view/logout.php">Register</a>
                 </li>
             <?php } ?>
->>>>>>> b395d94eb894decc32168dee2ae2da3f90e8dd88
         </ul>
     </div>
 </nav>
