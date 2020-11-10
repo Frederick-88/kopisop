@@ -44,7 +44,7 @@ if (isset($_POST['reg_user'])) {
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
             $mail->Username = 'kopisopweb@gmail.com';
-            $mail->Password = 'kopisop1234';
+            $mail->Password = '';
             $mail->Port = 465;
             $mail->SMTPAuth = true;
             $mail->SMTPSecure = 'ssl';
