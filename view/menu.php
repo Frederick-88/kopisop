@@ -1,7 +1,7 @@
 <?php include "../library/process.php" ?>
 <?php session_start() ?>
 <?php if (!isset($_SESSION['login'])) {
-    header('location:./login.php');
+    header('location:./auth/login.php');
 } ?>
 
 <!DOCTYPE html>
@@ -23,45 +23,56 @@
     '../model/query_image.php'; ?>
     <div class="bg-custom">
         <div class="container mt-5">
-            <div class="bg-menu p-5">
+            <div class="bg-menu p-3 p-lg-5">
                 <?php if ($_SESSION['role'] === "1") { ?>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAdd">
                         Add Food Here
                     </button>
-                    <?php include '../component/modal_add.php' ?>
+                    <?php include '../component/modal/modal_add.php' ?>
                 <?php } ?>
+
                 <?php
                 require '../library/process.php';
                 $query = "SELECT * FROM Food";
                 $result = $mysqli->query($query);
                 ?>
 
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-                    <?php while($row=$result->fetch_assoc()){?>
-                    <div class="col mt-4 mb-4">
-                        <div class="card mb-4">
-                            <div class="view overlay">
-                                <img class="card-img-top" src="<?php echo $row['food_pic'] ?>">
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title"><b><?= $row['name']; ?></b></h4>
-                                <p class="card-text">
-                                    Price : Rp <?php echo number_format($row['price'], 0, ".", "."); ?>
-                                </p>
-                                <?php if ($_SESSION['role'] === "1") { ?>
-                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalEdit<?= $row['food_id'] ?>">Edit</button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDel<?= $row['food_id'] ?>">Delete</button>
-                                    <?php
-                                    include '../component/modal_delete.php';
-                                    include '../component/modal_edit.php'
-                                    ?>
-                                    <?php }else {?>
-                                    <button type="button" class="btn btn-danger btn-block">Add to Cart</button>
-                                <?php } ?>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+                    <?php while ($row = $result->fetch_assoc()) { ?>
+                        <div class="col mt-4">
+                            <div class="card rounded mb-4">
+                                <div class="view overlay">
+                                    <img class="card-img-top" src="<?php echo $row['food_pic'] ?>">
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title"><b><?= $row['name']; ?></b></h4>
+                                    <p class="card-text">
+                                        Price : Rp <?php echo number_format($row['price'], 0, ".", "."); ?>
+                                    </p>
+                                    <?php if ($_SESSION['role'] === "1") { ?>
+                                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalEdit<?= $row['food_id'] ?>">Edit</button>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDel<?= $row['food_id'] ?>">Delete</button>
+                                        <?php
+                                        include '../component//modal/modal_delete.php';
+                                        include '../component/modal/modal_edit.php'
+                                        ?>
+                                    <?php } else { ?>
+                                        <form action="../model/MenuController.php" method="POST">
+                                            <div class="form-row">
+                                                <input type="hidden" name="user_id" value="<?php echo $_SESSION['id'] ?>">
+                                                <input type="hidden" name="food_id" value="<?php echo $row['food_id'] ?>">
+                                                <div class="col-4">
+                                                    <input type="number" name="quantity" class="form-control mb-2 mr-sm-2" min=1 max=99 value=1 required>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <input type="submit" class="btn btn-danger mb-2" name="add_cart" value="Add to Cart">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    <?php } ?>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
                     <?php } ?>
                 </div>
 
