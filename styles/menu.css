@@ -25,6 +25,10 @@
   object-fit: cover;
 }
 
+.btn-danger{
+  background-color: #ca1414 ;
+}
+
 @media (min-width: 320px) and (max-width: 1023px) {
   .card-img-top {
       height: 170px; 

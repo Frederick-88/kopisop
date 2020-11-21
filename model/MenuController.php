@@ -4,9 +4,9 @@ require('../library/process.php');
 if (isset($_POST['save'])) {
     $name = $_POST['name'];
     $price = $_POST['price'];
-    $category=$_POST['category'];
+    $category = $_POST['category'];
     $image = $_FILES['image']['name'];
-    $explode=explode('.', $image);
+    $explode = explode('.', $image);
     $ext = end($explode);
     $photo = '../model/Images/' . $name . '.' . $ext;
 
@@ -37,7 +37,7 @@ if (isset($_POST['update'])) {
     $id = $_POST['id'];
     $name = $_POST['name'];
     $price = $_POST['price'];
-    $category=$_POST['category'];
+    $category = $_POST['category'];
     $oldimage = $_POST['oldimage'];
 
     if (isset($_FILES['image']['name']) && ($_FILES['image']['name'] != "")) {
@@ -53,6 +53,29 @@ if (isset($_POST['update'])) {
 
     $query = "UPDATE Food SET name='$name', price='$price', food_pic='$photo', category_id='$category' WHERE food_id='$id'";
     $result = $mysqli->query($query);
+
+    header('location:../view/menu.php');
+}
+
+if (isset($_POST['add_cart'])) {
+    $food = $_POST['food_id'];
+    $user = $_POST['user_id'];
+    $quantity = $_POST['quantity'];
+
+    $query = "SELECT * FROM Cart WHERE food_id=$food AND user_id=$user";
+    $result = $mysqli->query($query);
+    $row = $result->fetch_assoc();
+
+    if (mysqli_num_rows($result) === 1) {
+        $totalQuantity = $quantity + $row['quantity'];
+        $cart = $row['cart_id'];
+        $update = "UPDATE Cart SET quantity=$totalQuantity WHERE cart_id=$cart";
+        $stmt = $mysqli->query($update);
+        
+    } else {
+        $insert = "INSERT Cart SET user_id=$user, food_id=$food, quantity=$quantity";
+        $stmt = $mysqli->query($insert);
+    }
 
     header('location:../view/menu.php');
 }

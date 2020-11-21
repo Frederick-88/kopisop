@@ -28,7 +28,7 @@
                     </button>
                     <?php include '../component/modal/modal_add.php' ?>
                 <?php } ?>
-            
+
                 <?php
                 require '../library/process.php';
                 $query = "SELECT * FROM Food";
@@ -55,8 +55,18 @@
                                         include '../component/modal/modal_edit.php'
                                         ?>
                                     <?php } else { ?>
-                                        <input type="number" class=" mt-2 mb-2" min=1 max=99>
-                                        <button type="button" class="btn btn-danger">Add to Cart</button>
+                                        <form action="../model/MenuController.php" method="POST">
+                                            <div class="form-row">
+                                                <input type="hidden" name="user_id" value="<?php echo $_SESSION['id'] ?>">
+                                                <input type="hidden" name="food_id" value="<?php echo $row['food_id'] ?>">
+                                                <div class="col-4">
+                                                    <input type="number" name="quantity" class="form-control mb-2 mr-sm-2" min=1 max=99 value=1 required>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <input type="submit" class="btn btn-danger mb-2" name="add_cart" value="Add to Cart">
+                                                </div>
+                                            </div>
+                                        </form>
                                     <?php } ?>
                                 </div>
                             </div>

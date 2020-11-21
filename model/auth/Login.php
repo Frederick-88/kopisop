@@ -11,14 +11,15 @@ if (isset($_POST['login_user'])) {
     $password = $_POST['password'];
 
     $query = "SELECT * FROM Customer where email='$email' LIMIT 1";
-    $result = mysqli_query($mysqli, $query);
+    $result = $mysqli->query($query);
 
     if (mysqli_num_rows($result) === 1) {
         $user = $result->fetch_assoc();
 
         if (password_verify($password, $user['password'])) {
             if($user['verified']=== '0'){
-                $errors['login_fail'] = "This email doesn't verify yet. Please check your email!";
+                $link='<a href="#" type="button" data-toggle="modal" data-target="#modalResentVerify">Re-send email here </a>';
+                $errors['login_fail'] = "This email doesn't verified yet. Please check your email! Haven't received email yet? ".$link;
             }
             
             else {

@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Menu</title>
+    <title><?php echo $_SESSION['name']?></title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/navbar.css">
@@ -19,33 +19,37 @@
 
 <body>
     <?php include "../component/navbar.php"; ?>
-    <div class="row no-gutters">
-        <div class="col-lg-3 col-md-12 no-gutters">
-            <div class="img-box py-5">
-                <div class="d-flex flex-column align-items-center text-center ">
-
-                    <?php if (isset($_SESSION['pic'])) { ?>
-                        <img src="<?php echo $_SESSION['pic'] ?>" alt="Admin" class="rounded-circle" width="150">
-                    <?php } else { ?>
-                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
-                    <?php } ?>
-
-                    <div class="mt-3">
-                        <h4><?php echo $_SESSION['name'] ?></h4>
-                        <button class="btn btn-danger">Change Photo</button>
+    <div class="bg-custom">
+        <div class="container mt-5">
+            <div class="d-flex justify-content-center align-items-center m-sm-0 m-md-5">
+                <div class="card w-100 p-sm-2 p-md-5">
+                    <div class="card-body m-sm-0 m-md-5">
+                        <h1 class="card-title mb-sm-2 mb-md-5">Personal Information</h1>
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-2 col-form-label">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control-plaintext" value="<?php echo $_SESSION['name'] ?>">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" readonly class="form-control-plaintext" value="<?php echo $_SESSION['email'] ?>">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="address" class="col-sm-2 col-form-label">Address</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control-plaintext" value="<?php echo empty($_SESSION['address']) ? "-" : $_SESSION['address']; ?>">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="phone" class="col-sm-2 col-form-label">Phone</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control-plaintext" value="<?php echo empty($_SESSION['phone']) ? "-" : $_SESSION['phone']; ?>">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <ul class="list-group">
-                <li class="list-group-item list-group-item-action">Personal Information</li>
-                <li class="list-group-item list-group-item-action">Feedback</li>
-                <li class="list-group-item list-group-item-action">Log Out</li>
-            </ul>
-        </div>
-        <div class="col-lg-9 col-md-12 no-gutters">
-            <div class="rightside d-flex justify-content-center align-items-center">
-                <div class="card" style="width: 25rem;">
-
                 </div>
             </div>
         </div>

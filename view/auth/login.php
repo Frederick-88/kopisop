@@ -18,7 +18,10 @@
 </head>
 
 <body>
-    <?php include '../../component/alert.php' ?>
+    <?php include '../../component/alert.php';
+    include '../../component/modal/modal_resent_verify.php';
+    ?>
+    
     <div class="row no-gutters">
         <div class="col-lg-7 col-md-12 no-gutters">
             <div class="leftside d-flex justify-content-center align-items-center">

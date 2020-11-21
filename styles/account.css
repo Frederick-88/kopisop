@@ -4,24 +4,15 @@
     font-family: 'GothamPro';
 }
 
-.rightside {
-    min-height: 100vh;
+.bg-custom {
     width: 100%;
+    min-height: 100vh;
+    background-color: #b4b4b4;
+    background-size: cover;
     overflow: hidden;
 }
 
-.img-box {
-    background-color: #ca1414;
-    color: white;
-}
-
-.img-profile {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.rightside {
-    background: #d4d4d4b9;
+input{
+    outline: none;
+    box-shadow: none;
 }
