@@ -1,8 +1,4 @@
-<<<<<<< HEAD:view/login.php
-<?php include '../model/Login_controller.php'?>
-=======
-<?php require_once '../../model/auth/Login.php'?>
->>>>>>> 111177cbb810d83e091ac908a46f88500fbc83a1:view/auth/login.php
+<?php include '../../model/auth/login_controller.php' ?>
 <?php if (isset($_SESSION['login'])) {
     header('location:./menu.php');
 } ?>
@@ -25,17 +21,12 @@
     <?php include '../../component/alert.php';
     include '../../component/modal/modal_resent_verify.php';
     ?>
-    
+
     <div class="row no-gutters">
         <div class="col-lg-7 col-md-12 no-gutters">
             <div class="leftside d-flex justify-content-center align-items-center">
-<<<<<<< HEAD:view/login.php
                 <div class="card border-0" style="width: 20rem;">
-                    <form action="../model/Login_controller.php" method="POST">
-=======
-                <div class="card-block" style="width: 20rem;">
-                    <form action="../../model/auth/Login.php" method="POST">
->>>>>>> 111177cbb810d83e091ac908a46f88500fbc83a1:view/auth/login.php
+                    <form action="../model/auth/login_controller.php" method="POST">
                         <h1>Login Here</h1>
                         <div class="form-group">
                             <label for="emailInput">Email</label>

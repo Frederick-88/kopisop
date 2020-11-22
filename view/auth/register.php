@@ -1,8 +1,4 @@
-<<<<<<< HEAD:view/register.php
-<?php include "../model/Register_controller.php"; ?>
-=======
-<?php require_once "../../model/auth/Register.php"; ?>
->>>>>>> 111177cbb810d83e091ac908a46f88500fbc83a1:view/auth/register.php
+<?php include "../../model/auth/register_controller.php"; ?>
 <?php if (isset($_SESSION['login'])) {
     header('location:./menu.php');
 } ?>
@@ -32,13 +28,8 @@
         </div>
         <div class="col-lg-7 col-md-12 no-gutters">
             <div class="rightside d-flex justify-content-center align-items-center">
-<<<<<<< HEAD:view/register.php
                 <div class="card border-0" style="width: 25rem;">
-                    <form action="../model/Register_controller.php" method="POST">
-=======
-                <div class="card-block" style="width: 25rem;">
-                    <form action="../../model/auth/Register.php" method="POST">
->>>>>>> 111177cbb810d83e091ac908a46f88500fbc83a1:view/auth/register.php
+                    <form action="../../auth/model/register_controller.php" method="POST">
                         <h1>Create Account</h1>
                         <div class="form-group">
                             <label for="nameInput">Full Name</label>
