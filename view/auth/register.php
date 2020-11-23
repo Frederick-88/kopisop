@@ -29,7 +29,7 @@
         <div class="col-lg-7 col-md-12 no-gutters">
             <div class="rightside d-flex justify-content-center align-items-center">
                 <div class="card border-0" style="width: 25rem;">
-                    <form action="../../auth/model/register_controller.php" method="POST">
+                    <form action="../../model/auth/register_controller.php" method="POST">
                         <h1>Create Account</h1>
                         <div class="form-group">
                             <label for="nameInput">Full Name</label>

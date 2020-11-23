@@ -77,9 +77,11 @@ if (isset($_POST['reg_user'])) {
     }
 }
 
+// resend verification
 if (isset($_POST['resent_verify'])) {
     $email = $_POST['email'];
     $token = bin2hex(random_bytes(50));
+    $link_address   = "../../view/auth/resend_verify.php";
 
     $mail = new PHPMailer();
 
@@ -131,13 +133,13 @@ if (isset($_POST['resent_verify'])) {
 
                 header('location: ../../view/auth/login.php');
             } else {
-                $_SESSION['message'] = "Please check your email for verify";
+                $_SESSION['message'] = "Please Verify your account first!" .  " Have not receive email yet? <a href='".$link_address."'>Send Verification email.</a>";
                 $_SESSION['type'] = "alert-warning";
 
                 header('location: ../../view/auth/login.php');
             }
         } else {
-            $error['error_msg'] = "Error while try resend the email. PLeas Try Again.";
+            $error['error_msg'] = "Error while try resend the email. PLease Try Again.";
         }
     } else {
         $_SESSION['message'] = $error['error_msg'];

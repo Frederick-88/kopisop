@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <?php include "./model/Logout_controller.php"; ?>
+    <?php include "./model/auth/logout_controller.php"; ?>
     
     <nav class="navbar navbar-expand-lg bg-white position-sticky">
         <a class="navbar-brand" href="index.php"><span>kopisop</span></a>

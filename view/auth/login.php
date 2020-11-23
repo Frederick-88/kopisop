@@ -26,7 +26,7 @@
         <div class="col-lg-7 col-md-12 no-gutters">
             <div class="leftside d-flex justify-content-center align-items-center">
                 <div class="card border-0" style="width: 20rem;">
-                    <form action="../model/auth/login_controller.php" method="POST">
+                    <form action="../../model/auth/login_controller.php" method="POST">
                         <h1>Login Here</h1>
                         <div class="form-group">
                             <label for="emailInput">Email</label>

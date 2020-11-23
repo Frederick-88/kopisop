@@ -11,13 +11,8 @@
                 Are you sure want to Log Out?
             </div>
             <div class="modal-footer">
-<<<<<<< HEAD:component/modal_logout.php
-                <a class="btn btn-secondary mr-2" data-dismiss="modal">No</a>
-                <a href="../model/Logout.php" class="btn btn-danger mr-2">Yes</a>
-=======
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                <a href="../model/auth/Logout.php" class="btn btn-danger mr-2">Yes</a>
->>>>>>> 111177cbb810d83e091ac908a46f88500fbc83a1:component/modal/modal_logout.php
+                <a href="../model/auth/logout_controller.php" class="btn btn-danger mr-2">Yes</a>
             </div>
         </div>
     </div>

@@ -16,14 +16,8 @@
                     <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <?php echo $_SESSION['name'] ?>
                     </a>
-<<<<<<< HEAD
-                    <div class="dropdown-menu dropdown  -menu-right" id="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Settings</a>
-                        <a class="dropdown-item" href="#">History</a>
-=======
                     <div class="dropdown-menu dropdown-menu-right" id="dropdownMenuButton">
                         <a class="dropdown-item" href="../view/account.php">Account</a>
->>>>>>> 111177cbb810d83e091ac908a46f88500fbc83a1
                         <a class="dropdown-item" href="../view/feedback.php">Feedback</a>
                         <a type="button" class="dropdown-item" data-toggle="modal" data-target="#modalLogOut">Logout</a>
                     </div>
@@ -39,4 +33,4 @@
         </ul>
     </div>
 </nav>
-<?php include '../component/modal/modal_logout.php' ?>
+<?php include '/modal/modal_logout.php' ?>
