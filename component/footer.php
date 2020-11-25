@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <footer class="page-footer font-small grey darken-3">
+    <footer class="page-footer font-small grey darken-1">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 py-5">

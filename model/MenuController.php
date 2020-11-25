@@ -79,3 +79,6 @@ if (isset($_POST['add_cart'])) {
 
     header('location:../view/menu.php');
 }
+
+?>
+

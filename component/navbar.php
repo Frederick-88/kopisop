@@ -33,4 +33,4 @@
         </ul>
     </div>
 </nav>
-<?php include '/modal/modal_logout.php' ?>
+<?php include '../component/modal/modal_logout.php' ?>
