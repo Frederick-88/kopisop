@@ -1,8 +1,8 @@
 .navbar {
-  box-shadow: 0 10px 12px#6b0003;
+  box-shadow: 0 10px 12px#4e4e4e9a;
 }
 
-span {
+.navbar-toggler-icon, .navbar-brand{
   color: #8f0809;
   letter-spacing: 2px;
   margin: 10px;
@@ -32,3 +32,4 @@ span {
   border-width: 2px;
   border-radius: 2px;
 } 
+

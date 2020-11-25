@@ -1,6 +1,6 @@
 <?php session_start() ?>
 <?php if (!isset($_SESSION['login'])) {
-    header('location:./login.php');
+    header('location:./auth/login.php');
 } ?>
 
 <!DOCTYPE html>
@@ -18,47 +18,28 @@
 
 <body>
     <?php include '../component/navbar.php'; ?>
-    <p style="margin-top: 25px; margin-left: 25px; font-size: 48px">
-        <span style="color: white">Send Us</span>
-        <span style="color: yellow">Feedback!</span>
-    </p>
-    <p style="margin-left: 25px">
-        Should you face any issue, feel free to leave a feedback.
-        <br>
-        We will get back to you as soon as we can.
-    </p>
+    <div class="bg-custom">
+        <div class="container mt-5">
+            <p style="font-size: 48px;">
+                Send Us <span class="m-0 p-0 text-warning">Feedback!</span>
+            </p>
+            <p>
+                Should you face any issue, feel free to leave a feedback.
+                <br>
+                We will get back to you as soon as we can.
+            </p>
 
-    <div class="card mx-auto">
-        <div class="card-body">
-            <form>
-                <!-- <div class="form-group">
-                    <label for="nameInput">Full Name</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-light border-0">
-                                <img class="input-icon" src="../assets/icons/user.png" alt="user">
-                            </span>
+            <div class="card mt-5 mx-auto">
+                <div class="card-body">
+                    <form action="" method="POST">
+                        <div class="form-group">
+                            <label for="messageInput">Message</label>
+                            <textarea class="form-control" name="messageInput" placeholder="Enter your message"></textarea>
                         </div>
-                        <input type="name" class="form-control" id="nameInput" placeholder="Enter your name">
-                    </div>
+                        <button type="submit" class="btn btn-block btn-custom" name="feedback">Submit</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="emailInput">Email</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-light border-0">
-                                <img class="input-icon" src="../assets/icons/email.png" alt="email">
-                            </span>
-                        </div>
-                        <input type="email" class="form-control" id="emailInput" placeholder="Enter your email">
-                    </div>
-                </div> -->
-                <div class="form-group">
-                    <label for="messageInput">Message</label>
-                    <textarea class="form-control" id="messageInput" rows="3" placeholder="Enter your message"></textarea>
-                </div>
-                <button type="submit" class="btn btn-block btn-custom">Submit</button>
-            </form>
+            </div>
         </div>
     </div>
 

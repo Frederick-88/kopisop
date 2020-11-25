@@ -1,13 +1,12 @@
 @import 'fonts/gotham.css';
 
 * {
-    font-family: 'GothamPro';
-    color: #ffffff;
+  font-family: 'GothamPro';
+  color: #ffffff;
 }
 
-.bg-image{
+.bg-image {
   width: 100%;
-  min-height:100vh;
   background-image: url("../assets//images/background.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -15,6 +14,35 @@
 }
 
 
+.recommend-wrapper {
+  position: relative;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
 
+.recommend-block {
+  flex: 0 0 auto;
+  padding: 5px;
+  margin: 0 5px;
+}
 
+.recommend-block .card-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+}
 
+.recommend-block .card-img-overlay {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
