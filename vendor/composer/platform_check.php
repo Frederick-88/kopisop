@@ -10,8 +10,10 @@ if (!(PHP_VERSION_ID >= 70205)) {
 
 $missingExtensions = array();
 extension_loaded('ctype') || $missingExtensions[] = 'ctype';
+extension_loaded('dom') || $missingExtensions[] = 'dom';
 extension_loaded('filter') || $missingExtensions[] = 'filter';
 extension_loaded('hash') || $missingExtensions[] = 'hash';
+extension_loaded('mbstring') || $missingExtensions[] = 'mbstring';
 
 if ($missingExtensions) {
     $issues[] = 'Your Composer dependencies require the following PHP extensions to be installed: ' . implode(', ', $missingExtensions);

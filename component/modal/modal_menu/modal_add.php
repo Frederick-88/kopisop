@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="../model/Menu_Controller.php" method="POST" enctype="multipart/form-data">
+                <form action="../controller/Menu_Controller.php" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <input type="text" name="name" class="form-control" placeholder="Enter Name Food Here" required>
                     </div>
@@ -20,10 +20,8 @@
                             <option value="" disabled selected hidden>---Select The Category---</option>
 
                             <?php
-                            require_once '../library/process.php';
-                            $data = $mysqli->query("SELECT * FROM Category");
-
-                            while ($category = $data->fetch_assoc()) :
+                            $row=$foodAll->getAllCategory();
+                            while ($category = $row->fetch_assoc()):
                             ?>
                                 <option value="<?php echo $category['category_id'] ?>"><?php echo $category['category_name'] ?> </option>
 

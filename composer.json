@@ -1,6 +1,7 @@
 {
     "require": {
         "phpmailer/phpmailer": "^6.1",
-        "symfony/dotenv": "^5.1"
+        "symfony/dotenv": "^5.1",
+        "dompdf/dompdf": "^0.8.6"
     }
 }

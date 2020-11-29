@@ -1,0 +1,16 @@
+#message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+#top-message {
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100px;
+}
