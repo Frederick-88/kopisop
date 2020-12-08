@@ -1,5 +1,6 @@
-<?php include '../../model/auth/login_controller.php' ?>
-<?php if (isset($_SESSION['login'])) {
+<?php 
+session_start();
+if (isset($_SESSION['login'])) {
     header('location:./menu.php');
 } ?>
 
@@ -21,12 +22,12 @@
     <?php include '../../component/alert.php';
     include '../../component/modal/modal_resent_verify.php';
     ?>
-
+    
     <div class="row no-gutters">
         <div class="col-lg-7 col-md-12 no-gutters">
             <div class="leftside d-flex justify-content-center align-items-center">
-                <div class="card border-0" style="width: 20rem;">
-                    <form action="../../model/auth/login_controller.php" method="POST">
+                <div class="card-block" style="width: 20rem;">
+                    <form action="../../model/auth/Login_Controller.php" method="POST">
                         <h1>Login Here</h1>
                         <div class="form-group">
                             <label for="emailInput">Email</label>

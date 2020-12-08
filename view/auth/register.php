@@ -1,5 +1,6 @@
-<?php include "../../model/auth/register_controller.php"; ?>
-<?php if (isset($_SESSION['login'])) {
+<?php
+session_start();
+if (isset($_SESSION['login'])) {
     header('location:./menu.php');
 } ?>
 
@@ -28,8 +29,8 @@
         </div>
         <div class="col-lg-7 col-md-12 no-gutters">
             <div class="rightside d-flex justify-content-center align-items-center">
-                <div class="card border-0" style="width: 25rem;">
-                    <form action="../../model/auth/register_controller.php" method="POST">
+                <div class="card-block" style="width: 25rem;">
+                    <form action="../../model/auth/Register_Controller.php" method="POST">
                         <h1>Create Account</h1>
                         <div class="form-group">
                             <label for="nameInput">Full Name</label>

@@ -32,28 +32,6 @@
             <div class="card mt-5 mx-auto">
                 <div class="card-body">
                     <form action="" method="POST">
-                        <!-- <div class="form-group">
-                    <label for="nameInput">Full Name</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-light border-0">
-                                <img class="input-icon" src="../assets/icons/user.png" alt="user">
-                            </span>
-                        </div>
-                        <input type="name" class="form-control" id="nameInput" placeholder="Enter your name">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="emailInput">Email</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text bg-light border-0">
-                                <img class="input-icon" src="../assets/icons/email.png" alt="email">
-                            </span>
-                        </div>
-                        <input type="email" class="form-control" id="emailInput" placeholder="Enter your email">
-                    </div>
-                </div> -->
                         <div class="form-group">
                             <label for="messageInput">Message</label>
                             <textarea class="form-control" name="messageInput" placeholder="Enter your message"></textarea>

@@ -17,4 +17,39 @@
     width: 100%;
     height: 100%;
     border-radius: 20px;
-  }
+}
+
+.bg-cart h1,h6{
+    color: #ca1414;
+}
+
+.bg-cart td{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.icon-button{
+    background-color: transparent;
+    padding: 2px;
+    margin: 0 4px;
+    outline: none !important;
+    border: none;
+}
+
+.icon-button .fa-trash{
+    color: #ca141448;
+}
+
+.icon-button .fa-trash:hover{
+    color: #ca1414;
+}
+
+.icon-button .fa-pencil{
+    color: #f0ac4ea1
+}
+
+.icon-button .fa-pencil:hover{
+    color: #f0ad4e
+}
+

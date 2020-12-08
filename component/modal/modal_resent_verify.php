@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
                 <p>Input your email below.</p>
-                <form action="../../model/auth/register_controller.php" method="POST">
+                <form action="../../model/auth/Register_Controller.php" method="POST">
                     <div class="form-group">
                         <div class="input-group">
                             <div class="input-group-prepend">

@@ -2,10 +2,14 @@
 require '../../library/process.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
+use Symfony\Component\Dotenv\Dotenv;
 
 include '../../vendor/autoload.php';
 
 session_start();
+
+$dotenv = new Dotenv();
+$dotenv->load('../../.env');
 
 $error = [];
 
@@ -42,8 +46,8 @@ if (isset($_POST['reg_user'])) {
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'kopisopweb@gmail.com';
-            $mail->Password = 'kopisop1234';
+            $mail->Username = $_ENV['EMAIL_PHPMAILER'];
+            $mail->Password = $_ENV['PASSWORD_PHPMAILER'];
             $mail->Port = 465;
             $mail->SMTPAuth = true;
             $mail->SMTPSecure = 'ssl';
@@ -77,11 +81,9 @@ if (isset($_POST['reg_user'])) {
     }
 }
 
-// resend verification
 if (isset($_POST['resent_verify'])) {
     $email = $_POST['email'];
     $token = bin2hex(random_bytes(50));
-    $link_address   = "../../view/auth/resend_verify.php";
 
     $mail = new PHPMailer();
 
@@ -113,8 +115,8 @@ if (isset($_POST['resent_verify'])) {
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'kopisopweb@gmail.com';
-            $mail->Password = 'kopisop1234';
+            $mail->Username = $_ENV['EMAIL_PHPMAILER)'];
+            $mail->Password = $_ENV['PASSWORD_PHPMAILER'];
             $mail->Port = 465;
             $mail->SMTPAuth = true;
             $mail->SMTPSecure = 'ssl';
@@ -133,13 +135,13 @@ if (isset($_POST['resent_verify'])) {
 
                 header('location: ../../view/auth/login.php');
             } else {
-                $_SESSION['message'] = "Please Verify your account first!" .  " Have not receive email yet? <a href='".$link_address."'>Send Verification email.</a>";
+                $_SESSION['message'] = "Please check your email for verify";
                 $_SESSION['type'] = "alert-warning";
 
                 header('location: ../../view/auth/login.php');
             }
         } else {
-            $error['error_msg'] = "Error while try resend the email. PLease Try Again.";
+            $error['error_msg'] = "Error while try resend the email. PLeas Try Again.";
         }
     } else {
         $_SESSION['message'] = $error['error_msg'];

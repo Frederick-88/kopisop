@@ -1,6 +1,5 @@
-<?php include "../library/process.php" ?>
-<?php session_start() ?>
-<?php if (!isset($_SESSION['login'])) {
+<?php session_start();
+if (!isset($_SESSION['login'])) {
     header('location:./auth/login.php');
 } ?>
 
@@ -13,22 +12,27 @@
     <title>Menu</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/alert.css">
 
     <link rel="stylesheet" href="../styles/menu.css">
 </head>
 
 <body>
-    <?php include "../component/navbar.php";
-    '../model/query_image.php'; ?>
+    <?php
+    include "../component/navbar.php";
+    ?>
+    
     <div class="bg-custom">
-        <div class="container mt-5">
+        <?php include "../component/alert.php";?>
+        <div class="container mt-5 mb-5">
             <div class="bg-menu p-3 p-lg-5">
                 <?php if ($_SESSION['role'] === "1") { ?>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAdd">
                         Add Food Here
                     </button>
-                    <?php include '../component/modal/modal_add.php' ?>
+                    <?php include '../component/modal/modal_menu/modal_add.php' ?>
                 <?php } ?>
 
                 <?php
@@ -45,27 +49,30 @@
                                     <img class="card-img-top" src="<?php echo $row['food_pic'] ?>">
                                 </div>
                                 <div class="card-body">
-                                    <h4 class="card-title"><b><?= $row['name']; ?></b></h4>
+                                    <h4 class="card-title"><b><?php echo $row['name']; ?></b></h4>
                                     <p class="card-text">
-                                        Price : Rp <?php echo number_format($row['price'], 0, ".", "."); ?>
+                                        Price : <?php echo "Rp" . number_format($row['price'], 0, ".", "."); ?>
                                     </p>
                                     <?php if ($_SESSION['role'] === "1") { ?>
                                         <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalEdit<?= $row['food_id'] ?>">Edit</button>
                                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDel<?= $row['food_id'] ?>">Delete</button>
                                         <?php
-                                        include '../component//modal/modal_delete.php';
-                                        include '../component/modal/modal_edit.php'
+                                        include '../component//modal/modal_menu/modal_delete.php';
+                                        include '../component/modal/modal_menu/modal_edit.php'
                                         ?>
                                     <?php } else { ?>
-                                        <form action="../model/MenuController.php" method="POST">
+                                        <form action="../model/Menu_Controller.php" method="POST">
                                             <div class="form-row">
                                                 <input type="hidden" name="user_id" value="<?php echo $_SESSION['id'] ?>">
                                                 <input type="hidden" name="food_id" value="<?php echo $row['food_id'] ?>">
                                                 <div class="col-4">
-                                                    <input type="number" name="quantity" class="form-control mb-2 mr-sm-2" min=1 max=99 value=1 required>
+                                                    <input type="number" name="quantity" class="form-control mb-2 mr-sm-2" min=1 value=1 required>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <input type="submit" class="btn btn-danger mb-2" name="add_cart" value="Add to Cart">
+                                                    <button type="submit" class="btn btn-custom mb-2" name="add_cart">
+                                                        <span class="fas fa-cart-plus"></span>
+                                                        Add to Cart
+                                                    </button>
                                                 </div>
                                             </div>
                                         </form>

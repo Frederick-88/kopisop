@@ -25,20 +25,23 @@
                         <p>Established at 2020, we create our coffee handmade and serve it with pride.</p>
                         <div class="mt-md-5 pt-md-5">
                             <h3 class="leading">Our recommendations</h3>
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="card border-0 rounded">
-                                        <img class="card-img" src="../assets/images/coffee1.jpg" alt="Card image">
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="card card border-0 rounded">
-                                        <img class="card-img" src="../assets/images/coffee1.jpg" alt="Card image">
-                                    </div>
-                                </div>
-                                <div class="col-4">
 
-                                </div>
+                            <?php
+                            require '../library/process.php';
+                            $query = "SELECT * FROM Food ORDER BY RAND()";
+                            $result = $mysqli->query($query);
+                            ?>
+                            <div class="recommend-wrapper">
+                                <?php while ($row = $result->fetch_assoc()) { ?>
+                                    <div class="recommend-block">
+                                        <div class="card" class="w-100 h-100">
+                                            <img class="card-img" src="<?php echo $row['food_pic'] ?>" alt="foods">
+                                            <div class="card-img-overlay">
+                                                <p class="card-title"><?php echo $row['name'] ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
@@ -51,7 +54,6 @@
             </div>
         </div>
     </div>
-    <?php include "../component/footer.php"; ?>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

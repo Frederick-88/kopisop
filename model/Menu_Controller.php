@@ -1,19 +1,18 @@
 <?php
 require('../library/process.php');
+session_start();
 
 if (isset($_POST['save'])) {
     $name = $_POST['name'];
     $price = $_POST['price'];
     $category = $_POST['category'];
     $image = $_FILES['image']['name'];
-    $explode = explode('.', $image);
-    $ext = end($explode);
-    $photo = '../model/Images/' . $name . '.' . $ext;
+    $photo = '../model/Images/' . $image;
 
     move_uploaded_file($_FILES['image']['tmp_name'], $photo);
 
     $query = "INSERT INTO Food (name, price, food_pic, category_id) VALUE ('$name','$price','$photo','$category')";
-    $result = $mysqli->query($query) or die(mysqli_error($mysqli));
+    $result = $mysqli->query($query);
 
     header('location:../view/menu.php');
 }
@@ -44,8 +43,7 @@ if (isset($_POST['update'])) {
         $new = $_FILES['image']['name'];
         unlink($oldimage);
 
-        $ext = end(explode('.', $new));
-        $photo = '../model/Images/' . $name . '.' . $ext;
+        $photo = '../model/Images/' . $new;
         move_uploaded_file($_FILES['image']['tmp_name'], $photo);
     } else {
         $photo = $oldimage;
@@ -66,7 +64,7 @@ if (isset($_POST['add_cart'])) {
     $result = $mysqli->query($query);
     $row = $result->fetch_assoc();
 
-    if (mysqli_num_rows($result) === 1) {
+    if ($result->num_rows === 1) {
         $totalQuantity = $quantity + $row['quantity'];
         $cart = $row['cart_id'];
         $update = "UPDATE Cart SET quantity=$totalQuantity WHERE cart_id=$cart";
@@ -76,9 +74,9 @@ if (isset($_POST['add_cart'])) {
         $insert = "INSERT Cart SET user_id=$user, food_id=$food, quantity=$quantity";
         $stmt = $mysqli->query($insert);
     }
+    
+    $_SESSION['message'] = "Success add to cart. Please check your Cart ";
+    $_SESSION['type'] = "alert-success";
 
     header('location:../view/menu.php');
 }
-
-?>
-
