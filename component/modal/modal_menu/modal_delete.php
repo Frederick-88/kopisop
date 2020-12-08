@@ -12,7 +12,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a href="../model/Menu_Controller.php?delete=<?php echo $row['food_id']; ?>" class="btn btn-danger mr-2">Delete</a>
+                <a href="../controller/Menu_Controller.php?delete=<?php echo $row['food_id']; ?>" class="btn btn-danger mr-2">Delete</a>
             </div>
         </div>
     </div>
