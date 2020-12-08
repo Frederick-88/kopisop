@@ -23,6 +23,11 @@ $mail->Port = 465;
 $mail->SMTPAuth = true;
 $mail->SMTPSecure = 'ssl';
 $mail->setFrom($_ENV['EMAIL_PHPMAILER'], 'Kopisop Official');
+$mail->AddEmbeddedImage('../assets/images/cherry-e-mail-marketing.png', 'image-email', 'image-email.png'); 
+
+$message = file_get_contents('../view/email/Layout_verify.php');
+
+echo $message;
 
 if (isset($_POST['reg_user'])) {
     $email = $_POST['email'];
@@ -33,31 +38,29 @@ if (isset($_POST['reg_user'])) {
 
     if ($result) {
         $url = 'http://' . $_SERVER['SERVER_NAME'] . '/kopisop/view/verify.php?id=' . $result . '&token=' . $token;
-        $link = '<a href=' . "$url" . '> Verify Here </a>';
-
-        $output = '<p>Thanks for registering with localhost. Please click this link to complete this registation <br>' . $link . '</p>';
+        $message = str_replace('%link%', $url, $message);
 
         $mail->addAddress($email, $name);
 
         $mail->isHTML(true);
         $mail->Subject = 'Register confirmation';
-        $mail->Body    = $output;
+        $mail->Body    = $message;
 
         if (!$mail->send()) {
-            $_SESSION['notif_auth']=true;
+            $_SESSION['notif_auth'] = true;
             $_SESSION['message'] = "Message could not be sent. Mailer Error: $mail->ErrorInfo";
             $_SESSION['type'] = "alert-danger";
 
             header('location: ../view/auth/register.php');
         } else {
-            $_SESSION['notif_auth']=true;
+            $_SESSION['notif_auth'] = true;
             $_SESSION['message'] = "Please check your email for verify";
             $_SESSION['type'] = "alert-warning";
 
             header('location: ../view/auth/login.php');
         }
     } else {
-        $_SESSION['notif_auth']=true;
+        $_SESSION['notif_auth'] = true;
         $_SESSION['message'] = $auth->errors;
         $_SESSION['type'] = "alert-danger";
         header('location: ../view/auth/register.php');
@@ -83,16 +86,16 @@ if (isset($_POST['resent_verify'])) {
         $mail->Body    = $output;
 
         if (!$mail->send()) {
-            $_SESSION['notif_auth']=true;
+            $_SESSION['notif_auth'] = true;
             $_SESSION['message'] = "Message could not be sent. Mailer Error: $mail->ErrorInfo";
             $_SESSION['type'] = "alert-danger";
         } else {
-            $_SESSION['notif_auth']=true;
+            $_SESSION['notif_auth'] = true;
             $_SESSION['message'] = "Please check your email for verify";
             $_SESSION['type'] = "alert-warning";
         }
     } else {
-        $_SESSION['notif_auth']=true;
+        $_SESSION['notif_auth'] = true;
         $_SESSION['message'] = $auth->errors;
         $_SESSION['type'] = "alert-danger";
     }

@@ -12,13 +12,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="../assets/styles/navbar.css">
+    <link rel="stylesheet" href="../assets/styles/alert.css">
 
     <link rel="stylesheet" href="../assets/styles/cart.css">
     <title>Cart</title>
 </head>
 
 <body>
-    <?php include "../component/navbar.php"; ?>
+    <?php 
+    include "../component/navbar.php";
+    include "../component/alert.php"; 
+    ?>
+    
     <div class="bg-custom">
         <div class="container mt-5 mb-5">
             <div class="bg-cart p-4 p-lg-5">
@@ -30,7 +35,7 @@
                 $shipping = 10000;
 
                 require '../model/Cart_Model.php';
-                $cart=new Cart;
+                $cart = new Cart;
                 $result = $cart->getCartByUserId($_SESSION['id']);
 
                 if ($result->num_rows != 0) {

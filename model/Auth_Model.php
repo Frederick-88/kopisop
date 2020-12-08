@@ -35,6 +35,9 @@ class Auth extends dbconnection
                     $_SESSION['id'] = $user['user_id'];
                     $_SESSION['name'] = $user['name'];
                     $_SESSION['role'] = $user['role'];
+                    $_SESSION['email'] = $user['email'];
+                    $_SESSION['phone'] = $user['phone'];
+                    $_SESSION['address'] = $user['address'];
                     $_SESSION['login'] = true;
                     return true;
                     exit();

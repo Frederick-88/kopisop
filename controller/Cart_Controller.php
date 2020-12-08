@@ -71,6 +71,7 @@ if (isset($_POST['checkOut'])) {
     $checkOut=$cart->checkOut($id, $date, $tax, $shipping, $subtotal, $total);
 
     if ($checkOut) {
+        $deleteAll = $cart->deleteAllCart($id);
         $_SESSION['notif_menu']=true;
         $_SESSION['message'] = "Success Order Food. Check on History";
         $_SESSION['type'] = 'alert-success';

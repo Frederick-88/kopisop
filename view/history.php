@@ -57,7 +57,7 @@
                                                 <?php echo $no++ ?>
                                             </div>
                                         </th>
-                                        <td><?php echo date('l, dS M Y', strtotime($row['date'])) ?></td>
+                                        <td><?php echo date('l, jS M Y', strtotime($row['date'])) ?></td>
                                         <td><?php echo "Rp" . number_format($row['tax'], 0, ".", ".") ?></td>
                                         <td><?php echo "Rp" . number_format($row['shipping'], 0, ".", ".") ?></td>
                                         <td><?php echo "Rp" . number_format($row['subtotal'], 0, ".", ".") ?></td>
@@ -92,7 +92,7 @@
                                                                 <tr>
                                                                     <th scope="row"><?php echo $noDetail++ ?></th>
                                                                     <td><?php echo $rowDetail['name'] ?></td>
-                                                                    <td><?php echo $rowDetail['quantity'] ?></td>
+                                                                    <td><?php echo $rowDetail['quantity'] ?>x</td>
                                                                     <td><?php echo "Rp" . number_format($rowDetail['oip'], 0, ".", ".") ?></td>
                                                                     <td><?php echo "Rp" . number_format($rowDetail['total'], 0, ".", ".") ?></td>
                                                                 </tr>
@@ -117,7 +117,6 @@
         </div>
     </div>
     </div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

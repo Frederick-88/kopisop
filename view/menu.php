@@ -20,19 +20,19 @@ if (!isset($_SESSION['login'])) {
 </head>
 
 <body>
-    <?php include "../component/navbar.php";?>
-
     <?php
+    include "../component/navbar.php";
+    include "../component/alert.php"; 
+    
     require '../model/Food_Model.php';
     $foodAll = new Food;
     $result = $foodAll->getAllFood();
     ?>
 
     <div class="bg-custom">
-        
+
         <div class="container mt-5 mb-5">
             <div class="bg-menu p-3 p-lg-5">
-            <?php include "../component/alert.php"; ?>
                 <?php if ($_SESSION['role'] === "1") { ?>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAdd">
                         Add Food Here
