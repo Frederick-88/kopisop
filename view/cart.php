@@ -11,15 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-<<<<<<< HEAD
-    <link rel="stylesheet" href="../styles/navbar.css">
-    <link rel="stylesheet" href="../styles/cart.css">
-=======
     <link rel="stylesheet" href="../assets/styles/navbar.css">
     <link rel="stylesheet" href="../assets/styles/alert.css">
 
     <link rel="stylesheet" href="../assets/styles/cart.css">
->>>>>>> bf5b625387a5ca7780cc307c73786d1ea036bd03
     <title>Cart</title>
 </head>
 
@@ -87,8 +82,8 @@
                                     </tr>
 
                                 <?php
-                                    include '../assets/component/modal/modal_cart/modal_editQty.php';
-                                    include '../assets/component/modal/modal_cart/modal_deleteById.php';
+                                    include '../component/modal/modal_cart/modal_editQty.php';
+                                    include '../component/modal/modal_cart/modal_deleteById.php';
                                 } ?>
 
                                 <?php
@@ -131,8 +126,8 @@
                         </button>
 
                         <?php
-                        include '../component//modal/modal_cart/modal_deleteAll.php';
-                        include '../component//modal/modal_cart/modal_checkOut.php';
+                        include '../component/modal/modal_cart/modal_deleteAll.php';
+                        include '../component/modal/modal_cart/modal_checkOut.php';
                         ?>
                     </div>
                 <?php } else { ?>

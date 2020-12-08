@@ -5,7 +5,6 @@
 
 <!doctype html>
 <html>
-
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -13,6 +12,7 @@
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet'>
     <link href='' rel='stylesheet'>
     <link rel="stylesheet" href="../styles/account1.css">
+    <link rel="stylesheet" href="../assets/styles/navbar.css">
 
 </head>
 <?php include "../component/navbar.php"; ?>
@@ -35,15 +35,9 @@
             </div>
             <div class="row py-2">
 
-
             </div>
             <div class="py-3 pb-4 border-bottom"> <button class="btn btn-primary mr-3">Edit</button> <button class="btn border button">Back</button> </div>
-            <div class="d-sm-flex align-items-center pt-3" id="deactivate">
-                <div> <b>Deactivate your account</b>
-                    <p>Note: Think twice before you press.</p>
-                </div>
-                <div class="ml-auto"> <button class="btn danger">Deactivate</button> </div>
-            </div>
+            
         </div>
     </div>
 
