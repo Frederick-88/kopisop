@@ -82,8 +82,8 @@
                                     </tr>
 
                                 <?php
-                                    include '../component//modal/modal_cart/modal_editQty.php';
-                                    include '../component//modal/modal_cart/modal_deleteById.php';
+                                    include '../component/modal/modal_cart/modal_editQty.php';
+                                    include '../component/modal/modal_cart/modal_deleteById.php';
                                 } ?>
 
                                 <?php
@@ -126,8 +126,8 @@
                         </button>
 
                         <?php
-                        include '../component//modal/modal_cart/modal_deleteAll.php';
-                        include '../component//modal/modal_cart/modal_checkOut.php';
+                        include '../component/modal/modal_cart/modal_deleteAll.php';
+                        include '../component/modal/modal_cart/modal_checkOut.php';
                         ?>
                     </div>
                 <?php } else { ?>

@@ -1,4 +1,4 @@
-<div class="modal fade" id="modalDelAll" tabindex="-1" role="dialog">
+<div class="modal fade" id="modalDel<?= $row['food_id'] ?>" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                Are you sure want to Delete all?
+                Are you sure want to delete this food?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

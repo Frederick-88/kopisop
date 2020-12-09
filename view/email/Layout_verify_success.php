@@ -85,17 +85,15 @@
     <div class="container">
         <img class="img-email" src="cid:image-email" alt="email-verify">
         <div class="fill">
-            <h1>Only one step to go</h1>
-            <h2> Click the button below and you'll be able to activate your <span style="color: #ca1414;">Kopisop</span> account</h2>
-            <br>
-            <br>
+            <h1>Yay! You Did It!</h1>
+            <h2>Your account has been successfully activated.
+            <h2>You can now proceed to new <span style="color: #ca1414;">kopisop</span> account.</h2>
+            <br><br><br>
             <a href='%link%' class="button-verify">
-                Verify Email Address
+                Proceed
             </a>
         </div>
     </div>
-
-
 </body>
 
 </html>
