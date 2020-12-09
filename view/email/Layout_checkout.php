@@ -10,7 +10,17 @@
             padding: 1%;
             background-color: #ca1414;
             height: 10px;
-            
+
+        }
+
+        .header {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .header h1 {
+            color: #ca1414;
+            font-size: 42px;
         }
     </style>
 </head>
@@ -20,8 +30,12 @@
     </div>
     <div class="main">
         <div class="header">
-            kopisop
+            <h1>kopisop</h1>
         </div>
+        <h2 >Hey {{name}}, </h2>
+        <br>
+        <h3>Thanks for ordering from kopisop!</h3>
+        <h3>Hope your tummy is satisfied :)</h3>
     </div>
 </body>
 

@@ -12,11 +12,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-<<<<<<< HEAD:component/modal/modal_delete.php
-                <a href="../model/action.php?delete=<?= $row['food_id']; ?>" class="btn btn-danger mr-2">Delete</a>
-=======
                 <a href="../controller/Cart_Controller.php?deleteAll=<?php echo $_SESSION['id']?>" class="btn btn-danger mr-2">Delete All</a>
->>>>>>> bf5b625387a5ca7780cc307c73786d1ea036bd03:component/modal/modal_cart/modal_deleteAll.php
             </div>
         </div>
     </div>
