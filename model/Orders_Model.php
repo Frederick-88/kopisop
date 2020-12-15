@@ -10,33 +10,35 @@ class Orders extends dbconnection
         return !empty($result) ? $result : false;
     }
 
-    public function getOrderDetail($id)
+    public function getOrderById($id){
+        $query = "SELECT * FROM Orders WHERE order_id=$id";
+        $result = $this->mysqli->query($query);
+        return !empty($result) ? $result : false;
+    }
+
+    public function getOrderDetailByOrder($id)
     {
         $query = "SELECT *, OrderItem.price AS oip FROM OrderItem INNER JOIN Food ON OrderItem.food_id=Food.food_id WHERE order_id=$id";
         $result = $this->mysqli->query($query);
         return !empty($result) ? $result : null;
     }
 
-    public function getMonthOrder()
+    public function getMonthOrder($year)
     {
-        $query = "SELECT MONTH(date) AS month ,MONTHNAME(date) AS month_name, SUM(Total) AS totalSum FROM Orders GROUP BY(month)";
+        $query = "SELECT MONTH(date) AS month ,MONTHNAME(date) AS month_name, SUM(Total) AS totalSum FROM Orders WHERE YEAR(date)=$year GROUP BY(month)";
         $result = $this->mysqli->query($query);
         return !empty($result) ? $result : null;
     }
 
     public function getOrderByMonth($month)
     {
-        $query = "SELECT * FROM Orders WHERE MONTH(date)=$month ORDER BY date ASC";
+        $query = "SELECT date, SUM(total) AS total FROM Orders WHERE MONTH(date)=$month GROUP BY date ORDER BY date ASC";
         $result = $this->mysqli->query($query);
         return !empty($result) ? $result : null;
     }
 
-    public function getOrderAllMonth($year= null )
+    public function getOrderAllMonth($year)
     {
-        if(empty($year)){
-            $year=date('Y');
-        }
-
         for ($month = 1; $month < 13; $month++) {
             $query = "SELECT SUM(Total) AS total FROM Orders WHERE YEAR(date)=$year AND MONTH(date)=$month";
             $result = $this->mysqli->query($query);
@@ -45,5 +47,15 @@ class Orders extends dbconnection
         }
         
         return $data;
+    }
+
+    public function deleteOrderById($id){
+        $query = "DELETE FROM OrderItem WHERE order_id=$id";
+        $result = $this->mysqli->query($query);
+
+        if($result){
+            $query2 = "DELETE FROM Orders WHERE order_id=$id";
+            $result2 = $this->mysqli->query($query2);
+        }
     }
 }

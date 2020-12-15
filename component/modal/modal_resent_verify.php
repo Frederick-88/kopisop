@@ -9,16 +9,9 @@
             </div>
             <div class="modal-body">
                 <p>Input your email below.</p>
-                <form action="../../controller/Register_Controller.php" method="POST">
+                <form action="/kopisop/controller/Register_Controller.php" method="POST">
                     <div class="form-group">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-light border-0">
-                                    <img class="input-icon" src="../../assets/icons/email.png" alt="email">
-                                </span>
-                            </div>
-                            <input type="email" name="email" class="form-control " id="emailInput" placeholder="Enter your email" required>
-                        </div>
+                        <input type="email" name="email" class="form-control " id="emailInput" placeholder="Enter your email" required>
                     </div>
                     <div class="form-group">
                         <div class="modal-footer">

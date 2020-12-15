@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="stylesheet" href="../assets/styles/navbar.css">
     <link rel="stylesheet" href="../assets/styles/alert.css">
 
@@ -19,11 +19,11 @@
 </head>
 
 <body>
-    <?php 
+    <?php
     include "../component/navbar.php";
-    include "../component/alert.php"; 
+    include "../component/alert.php";
     ?>
-    
+
     <div class="bg-custom">
         <div class="container mt-5 mb-5">
             <div class="bg-cart p-4 p-lg-5">
@@ -32,11 +32,12 @@
 
                 $dateNow = date("Y-m-d");
                 $no = 1;
-                $shipping = 10000;
 
                 require '../model/Cart_Model.php';
                 $cart = new Cart;
                 $result = $cart->getCartByUserId($_SESSION['id']);
+                $shipping = $cart->getShipping();
+                $tax =$cart->getTax($_SESSION['id']);
 
                 if ($result->num_rows != 0) {
                 ?>
@@ -44,6 +45,8 @@
                         <h1>Your Order</h1>
                         <h6>Date : <?php echo $dateNow ?></h6>
                     </div>
+
+                    <small class="form-text text-danger">*Scroll right or rotate to landscape for small device </small>
 
                     <div class="table-responsive mt-3 p-2">
                         <table class="table table-fixed">
@@ -101,8 +104,7 @@
                                 <tr>
                                     <th class="text-center border-0" scope="row" colspan="3">Tax :</th>
                                     <td class="border-0">
-                                        <?php $tax = $subtotal * 0.1;
-                                        echo "Rp" . number_format($tax, 0, ".", "."); ?>
+                                        <?php echo "Rp" . number_format($tax, 0, ".", "."); ?>
                                     </td>
                                 </tr>
                                 <tr>

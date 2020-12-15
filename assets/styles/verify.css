@@ -1,0 +1,51 @@
+@import "fonts/gotham.css";
+
+* {
+  font-family: "GothamPro";
+}
+
+body {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    overflow:hidden;
+}
+
+.header {
+    padding: 1%;
+    background-color: #ca1414;
+}
+
+.header h1 {
+    color: white;
+    font-weight: 500;
+}
+
+.img-fill {
+    width: 300px;
+    max-width: 300px;
+    height: auto;
+    margin: auto;
+    display: block
+}
+
+.fill {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+.fill h1 {
+    color: #ca1414;
+}
+
+.fill .button-verify {
+    padding: 2%;
+    background-color: #ca1414;
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    border-radius: 10px;
+    border: 0;
+}

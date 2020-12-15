@@ -10,17 +10,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="stylesheet" href="../assets/styles/navbar.css">
+    <link rel="stylesheet" href="../assets/styles/alert.css">
 
     <link rel="stylesheet" href="../assets/styles/history.css">
     <title>History</title>
 </head>
 
 <body>
-    <?php include "../component/navbar.php"; ?>
+    <?php 
+    include "../component/navbar.php"; 
+    include "../component/alert.php"; 
+    ?>
     <div class="bg-custom">
-        <div class="container mt-5 mb-5">
+        <div class="container mt-5 mb-md-5">
             <div class="bg-cart p-4 p-lg-5">
                 <?php
                 $id = $_SESSION['id'];
@@ -33,6 +37,7 @@
                 if ($result->num_rows != 0) {
                 ?>
                     <h1>Your History</h1>
+                    <small class="form-text text-danger">*Scroll right or rotate to landscape for small device </small>
 
                     <div class="table-responsive mt-3 p-2">
                         <table class="table table-fixed">
@@ -44,6 +49,7 @@
                                     <th scope="col">Shipping</th>
                                     <th scope="col">Subtotal</th>
                                     <th scope="col">Total</th>
+                                    <th scope="col">Print</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -62,9 +68,10 @@
                                         <td><?php echo "Rp" . number_format($row['shipping'], 0, ".", ".") ?></td>
                                         <td><?php echo "Rp" . number_format($row['subtotal'], 0, ".", ".") ?></td>
                                         <td><?php echo "Rp" . number_format($row['total'], 0, ".", ".") ?></td>
+                                        <td><a href="../controller/Print_Controller.php?detailOrder=<?php echo $row['order_id']?>"><span class="fas fa-print"></span> Print Here </a></td>
                                     </tr>
                                     <tr id="row-collapse-<?php echo $row['order_id'] ?>" class="collapse">
-                                        <td colspan="6">
+                                        <td colspan="7">
                                             <div class="card w-100 border border-danger">
                                                 <div class="card-header bg-danger text-light">
                                                     Order Detail
@@ -72,7 +79,7 @@
                                                 <div class="card-body">
 
                                                     <?php
-                                                    $detail = $orders->getOrderDetail($row['order_id']);
+                                                    $detail = $orders->getOrderDetailByOrder($row['order_id']);
                                                     $noDetail = 1;
                                                     ?>
 

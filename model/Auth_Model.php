@@ -35,9 +35,6 @@ class Auth extends dbconnection
                     $_SESSION['id'] = $user['user_id'];
                     $_SESSION['name'] = $user['name'];
                     $_SESSION['role'] = $user['role'];
-                    $_SESSION['email'] = $user['email'];
-                    $_SESSION['phone'] = $user['phone'];
-                    $_SESSION['address'] = $user['address'];
                     $_SESSION['login'] = true;
                     return true;
                     exit();
@@ -71,16 +68,23 @@ class Auth extends dbconnection
                 return false;
             }
         } else {
-            $this->errors = "the email is already register";
+            $this->errors = "the email is already register. Please try login";
             return false;
         }
     }
 
-    public function verify($id,$token)
+    public function verify($id, $token)
     {
-        $select = "UPDATE Customer SET verified = '1' WHERE user_id = '$id' AND token = '$token'";
-        $result = $this->mysqli->query($select);
-        return !empty($result)? true:false;
+        $stmt = "SELECT * FROM Customer WHERE user_id = '$id' AND token = '$token'";
+        $verify = $this->mysqli->query($stmt);
+
+        if ($verify->num_rows === 1) {
+            $query = "UPDATE Customer SET verified = '1' WHERE user_id = $id AND token = '$token'";
+            $result = $this->mysqli->query($query);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function resentVerify($email, $token)
@@ -106,6 +110,18 @@ class Auth extends dbconnection
             }
         } else {
             $this->errors = "Email doesn't exists. Please register first!";
+            return false;
+        }
+    }
+
+    public function editUserById($id, $name, $phone, $address)
+    {
+        $query = "UPDATE Customer SET name='$name', phone='$phone', address='$address' WHERE user_id='$id'";
+        $result = $this->mysqli->query($query);
+        if ($result) {
+            $_SESSION['name'] = $name;
+            return true;
+        } else {
             return false;
         }
     }

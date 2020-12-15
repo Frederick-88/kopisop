@@ -1,9 +1,9 @@
 <?php
 $label = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-$data = $orders->getOrderAllMonth();
+$data = $orders->getOrderAllMonth($year);
 ?>
 
-<div class="card w-100 mb-5 mt-5">
+<div class="card w-100 mb-5 mt-3">
     <canvas id="myChart" class="w-100"></canvas>
 </div>
 

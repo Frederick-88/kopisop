@@ -26,7 +26,7 @@
                         <?php echo $_SESSION['name'] ?>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" id="dropdownMenuButton">
-                        <a class="dropdown-item" href="../view/account1.php">Account</a>
+                        <a class="dropdown-item" href="../view/account.php">Account</a>
                         <a class="dropdown-item" href="../view/feedback.php">Feedback</a>
                         <a type="button" class="dropdown-item" data-toggle="modal" data-target="#modalLogOut">Logout</a>
                     </div>

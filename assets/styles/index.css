@@ -17,17 +17,11 @@
 
 .recommend-wrapper {
   position: relative;
-  display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
   margin-top: 20px;
   padding-bottom: 20px;
 }
 
 .recommend-block {
-  flex: 0 0 auto;
   padding: 5px;
   margin: 0 5px;
 }

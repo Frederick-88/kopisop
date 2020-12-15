@@ -13,4 +13,5 @@
     left: 50%;
     transform: translateX(-50%);
     top: 100px;
+    max-width: 630px
 }

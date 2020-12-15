@@ -19,6 +19,29 @@ class Cart extends dbconnection
         return $total;
     }
 
+    public function getShipping()
+    {
+        $query = "SELECT shipping FROM other";
+        $result = $this->mysqli->query($query);
+        $get = $result->fetch_assoc();
+        $shipping= $get['shipping'];
+        return $shipping;
+    }
+
+    public function getTax($id)
+    {
+        $total= $this->getTotalPrice($id);
+
+        $query = "SELECT tax FROM other";
+        $result = $this->mysqli->query($query);
+        $get = $result->fetch_assoc();
+
+        $tax= $total * $get['tax']/100;
+        return $tax;
+    }
+    
+    
+
     public function deleteCartById($id)
     {
         $query = "DELETE FROM Cart WHERE cart_id=$id";
@@ -57,26 +80,9 @@ class Cart extends dbconnection
 
                 $query2 = "INSERT INTO OrderItem (order_id, food_id, quantity, price, total) VALUE ($orderId,$food_id,$quantity,$price,$total)";
                 $result2 = $this->mysqli->query($query2);
-
-                if (!$result2) {
-                    break;
-                    $query3 = "DELETE FROM Orders WHERE order_id=$orderId";
-                    $result3 = $this->mysqli->query($query3);
-
-                    if ($result3) {
-                        $query4 = "DELETE FROM OrderItem WHERE order_id=$orderId";
-                        $result4 = $this->mysqli->query($query4);
-                        return false;
-                        exit;
-                    }
-                } else {
-                    continue;
-                }
             }
-            $query5 = "SELECT * FROM OrderItem WHERE order_id=$orderId";
-            $result5 = $this->mysqli->query($query5);
-            return !empty($result5)? $result5:false;
-
+            return $orderId;
+            
         } else {
             return false;
         }
